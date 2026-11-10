@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680" font-family="Segoe UI, Arial, sans-serif">
+    <title>agendamento_form.php — Novo agendamento (F3)</title>
+    <style>
+        .t20 { font-size: 20px; font-weight: 700; fill: #1f2937; }
+        .t13 { font-size: 13px; fill: #1f2937; }
+        .t11 { font-size: 11px; fill: #6b7280; }
+        .t12l { font-size: 12px; fill: #1f2937; font-weight: 600; }
+        .btn { fill: #ffffff; stroke: #cbd5e1; }
+        .btnP { fill: #5b21b6; }
+        .btnTxt { font-size: 11.5px; fill: #1f2937; }
+        .btnTxtB { font-size: 11.5px; fill: #ffffff; font-weight: 600; }
+    </style>
+
+    <rect width="1200" height="680" fill="#f9fafb"/>
+
+    <!-- topo / menu -->
+    <rect width="1200" height="56" fill="#ffffff"/>
+    <line x1="0" y1="56" x2="1200" y2="56" stroke="#e5e7eb"/>
+    <text x="16" y="34" font-size="15" font-weight="700" fill="#5b21b6">AgendaSalão</text>
+    <rect x="872" y="10" width="64" height="36" rx="6" fill="#ede9fe"/>
+    <text x="880" y="34" font-size="13" font-weight="700" fill="#5b21b6">Agenda</text>
+    <text x="950" y="34" class="t13">Serviços</text>
+    <text x="1030" y="34" class="t13">Histórico</text>
+    <text x="1120" y="34" class="t13">Sair</text>
+
+    <text x="280" y="98" class="t20">Novo agendamento</text>
+    <text x="280" y="120" class="t11">Duração e valor vêm do serviço escolhido e podem ser ajustados.</text>
+
+    <!-- cliente -->
+    <text x="280" y="150" class="t12l">Cliente *</text>
+    <rect x="280" y="158" width="640" height="36" rx="6" fill="#ffffff" stroke="#cbd5e1"/>
+    <text x="294" y="181" class="t13">Marina Castro</text>
+
+    <!-- telefone + profissional -->
+    <text x="280" y="216" class="t12l">Telefone</text>
+    <rect x="280" y="224" width="312" height="36" rx="6" fill="#ffffff" stroke="#cbd5e1"/>
+    <text x="294" y="247" class="t13">(11) 98888-1234</text>
+    <text x="608" y="216" class="t12l">Profissional *</text>
+    <rect x="608" y="224" width="312" height="36" rx="6" fill="#ffffff" stroke="#cbd5e1"/>
+    <text x="622" y="247" class="t13">Ana ▾</text>
+
+    <!-- serviço -->
+    <text x="280" y="282" class="t12l">Serviço *</text>
+    <rect x="280" y="290" width="640" height="36" rx="6" fill="#ffffff" stroke="#cbd5e1"/>
+    <text x="294" y="313" class="t13">Corte feminino — 60 min — R$ 80,00 ▾</text>
+
+    <!-- data / hora / duração / valor -->
+    <text x="280" y="348" class="t12l">Data *</text>
+    <rect x="280" y="356" width="150" height="36" rx="6" fill="#ffffff" stroke="#cbd5e1"/>
+    <text x="294" y="379" class="t13">10/11/2026</text>
+    <text x="442" y="348" class="t12l">Hora de início *</text>
+    <rect x="442" y="356" width="110" height="36" rx="6" fill="#ffffff" stroke="#cbd5e1"/>
+    <text x="456" y="379" class="t13">15:00</text>
+    <text x="564" y="348" class="t12l">Duração (min) *</text>
+    <rect x="564" y="356" width="110" height="36" rx="6" fill="#ffffff" stroke="#cbd5e1"/>
+    <text x="578" y="379" class="t13">60</text>
+    <text x="686" y="348" class="t12l">Valor (R$) *</text>
+    <rect x="686" y="356" width="234" height="36" rx="6" fill="#ffffff" stroke="#cbd5e1"/>
+    <text x="700" y="379" class="t13">80,00</text>
+
+    <!-- observações -->
+    <text x="280" y="412" class="t12l">Observações</text>
+    <rect x="280" y="420" width="640" height="72" rx="6" fill="#ffffff" stroke="#cbd5e1"/>
+    <text x="294" y="443" class="t13">Cliente pediu para começar pontualmente.</text>
+
+    <!-- rodapé do formulário -->
+    <rect x="280" y="516" width="110" height="40" rx="6" class="btnP"/>
+    <text x="335" y="541" text-anchor="middle" class="btnTxtB">Salvar</text>
+    <rect x="402" y="516" width="110" height="40" rx="6" class="btn"/>
+    <text x="457" y="541" text-anchor="middle" class="btnTxt">Cancelar</text>
+
+    <!-- nota do comportamento JS (T4.4) -->
+    <rect x="280" y="576" width="640" height="44" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-dasharray="6 4"/>
+    <text x="294" y="598" font-size="11" font-style="italic" fill="#6b7280">Ao trocar o serviço, o JS preenche Duração e Valor automaticamente — os campos continuam editáveis.</text>
+
+    <text x="16" y="660" font-size="11" font-style="italic" fill="#94a3b8">agendamento_form.php · F3 · mesmo arquivo cria (?novo) e edita (?id=...) · validação no servidor é a fonte da verdade</text>
+</svg>

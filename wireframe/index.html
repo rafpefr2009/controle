@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Wireframes — AgendaSalão</title>
+    <style>
+        body { font-family: system-ui, "Segoe UI", Arial, sans-serif; background: #f9fafb; color: #1f2937; margin: 0; }
+        header { background: #fff; border-bottom: 1px solid #e5e7eb; padding: 12px 16px; }
+        h1 { font-size: 1.25rem; margin: 0; }
+        header p { margin: 4px 0 0; color: #6b7280; font-size: .875rem; }
+        main { max-width: 1200px; margin: 0 auto; padding: 16px; }
+        figure { margin: 0 0 32px; }
+        figcaption { font-size: .875rem; color: #6b7280; margin: 8px 0; }
+        img { max-width: 100%; height: auto; border: 1px solid #e5e7eb; border-radius: 8px; background: #fff; display: block; }
+        nav ul { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0 0; }
+        nav a { background: #ede9fe; color: #5b21b6; text-decoration: none; padding: 6px 12px; border-radius: 999px; font-size: .875rem; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Wireframes do AgendaSalão</h1>
+        <p>Uma imagem SVG por tela/estado do <code>NAVEGACAO.md</code>, seguindo o <code>DESIGN.md</code>. Vetoriais, sem dependências — abrem em qualquer navegador.</p>
+        <nav>
+            <ul>
+                <li><a href="#wf-login">Login</a></li>
+                <li><a href="#wf-agenda">Agenda</a></li>
+                <li><a href="#wf-agenda-vazia">Agenda vazia</a></li>
+                <li><a href="#wf-agenda-celular">Agenda no celular</a></li>
+                <li><a href="#wf-agendamento">Novo agendamento</a></li>
+                <li><a href="#wf-conflito">Conflito</a></li>
+                <li><a href="#wf-servicos">Serviços</a></li>
+                <li><a href="#wf-servico-form">Form de serviço</a></li>
+                <li><a href="#wf-historico">Histórico</a></li>
+                <li><a href="#wf-historico-vazio">Histórico vazio</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <figure id="wf-login">
+            <figcaption>1. login.php — Login (F1) · estado: credenciais inválidas</figcaption>
+            <img src="login.svg" alt="Tela de login com mensagem de erro">
+        </figure>
+
+        <figure id="wf-agenda">
+            <figcaption>2. agenda.php — Agenda do dia (F4) · dia com agendamentos, 3 colunas</figcaption>
+            <img src="agenda.svg" alt="Agenda do dia em três colunas por profissional">
+        </figure>
+
+        <figure id="wf-agenda-vazia">
+            <figcaption>3. agenda.php — Agenda do dia · estado: dia vazio</figcaption>
+            <img src="agenda-vazia.svg" alt="Agenda do dia vazia">
+        </figure>
+
+        <figure id="wf-agenda-celular">
+            <figcaption>4. agenda.php — Agenda no celular (&lt;900 px) · eixo de horas fixo, colunas rolam</figcaption>
+            <img src="agenda-celular.svg" alt="Agenda na largura de celular">
+        </figure>
+
+        <figure id="wf-agendamento">
+            <figcaption>5. agendamento_form.php — Novo agendamento (F3)</figcaption>
+            <img src="agendamento-form.svg" alt="Formulário de novo agendamento">
+        </figure>
+
+        <figure id="wf-conflito">
+            <figcaption>6. agendamento_form.php — estado: conflito de horário (CA2/CA5)</figcaption>
+            <img src="agendamento-conflito.svg" alt="Formulário com mensagem de conflito e horários livres">
+        </figure>
+
+        <figure id="wf-servicos">
+            <figcaption>7. servicos.php — Lista de serviços (F2)</figcaption>
+            <img src="servicos.svg" alt="Tabela de serviços com editar e inativar">
+        </figure>
+
+        <figure id="wf-servico-form">
+            <figcaption>8. servico_form.php — estado: erros de validação</figcaption>
+            <img src="servico-form.svg" alt="Formulário de serviço com erros de validação">
+        </figure>
+
+        <figure id="wf-historico">
+            <figcaption>9. historico.php — Histórico com filtros (F5) · status: realizado</figcaption>
+            <img src="historico.svg" alt="Histórico filtrado com tabela de agendamentos">
+        </figure>
+
+        <figure id="wf-historico-vazio">
+            <figcaption>10. historico.php — estado: filtro sem resultados</figcaption>
+            <img src="historico-vazio.svg" alt="Histórico sem resultados">
+        </figure>
+    </main>
+</body>
+</html>

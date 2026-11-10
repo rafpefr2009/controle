@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1000" viewBox="0 0 1200 1000" font-family="Segoe UI, Arial, sans-serif">
+    <title>agenda.php — Agenda do dia (F4) — estado: dia vazio</title>
+    <style>
+        .t20 { font-size: 20px; font-weight: 700; fill: #1f2937; }
+        .t13 { font-size: 13px; fill: #1f2937; }
+        .t11 { font-size: 11px; fill: #6b7280; }
+        .t10h { font-size: 10px; fill: #9ca3af; }
+        .btn { fill: #ffffff; stroke: #cbd5e1; }
+        .btnP { fill: #5b21b6; }
+        .btnTxt { font-size: 11.5px; fill: #1f2937; }
+        .btnTxtB { font-size: 11.5px; fill: #ffffff; font-weight: 600; }
+        .colNome { font-size: 13px; font-weight: 600; fill: #1f2937; }
+    </style>
+
+    <rect width="1200" height="1000" fill="#f9fafb"/>
+
+    <!-- topo / menu -->
+    <rect width="1200" height="56" fill="#ffffff"/>
+    <line x1="0" y1="56" x2="1200" y2="56" stroke="#e5e7eb"/>
+    <text x="16" y="34" font-size="15" font-weight="700" fill="#5b21b6">AgendaSalão</text>
+    <rect x="872" y="10" width="64" height="36" rx="6" fill="#ede9fe"/>
+    <text x="880" y="34" font-size="13" font-weight="700" fill="#5b21b6">Agenda</text>
+    <text x="950" y="34" class="t13">Serviços</text>
+    <text x="1030" y="34" class="t13">Histórico</text>
+    <text x="1120" y="34" class="t13">Sair</text>
+
+    <text x="16" y="98" class="t20">Agenda do dia</text>
+    <text x="16" y="120" class="t11">Quarta-feira, 11/11/2026 · expediente 09:00 às 19:00</text>
+
+    <!-- controles -->
+    <rect x="16" y="134" width="112" height="36" rx="6" class="btn"/>
+    <text x="72" y="156" text-anchor="middle" class="btnTxt">◀ Dia anterior</text>
+    <rect x="136" y="134" width="64" height="36" rx="6" class="btn"/>
+    <text x="168" y="156" text-anchor="middle" class="btnTxt">Hoje</text>
+    <rect x="208" y="134" width="120" height="36" rx="6" class="btn"/>
+    <text x="268" y="156" text-anchor="middle" class="btnTxt">Próximo dia ▶</text>
+    <rect x="338" y="134" width="140" height="36" rx="6" fill="#ffffff" stroke="#cbd5e1"/>
+    <text x="352" y="156" class="t13">11/11/2026</text>
+    <rect x="904" y="134" width="160" height="36" rx="6" class="btnP"/>
+    <text x="984" y="156" text-anchor="middle" class="btnTxtB">+ Novo agendamento</text>
+    <rect x="1072" y="134" width="112" height="36" rx="6" class="btn"/>
+    <text x="1128" y="156" text-anchor="middle" class="btnTxt">Exportar PDF</text>
+
+    <!-- estado vazio -->
+    <rect x="16" y="190" width="1168" height="90" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-dasharray="6 4"/>
+    <text x="600" y="226" text-anchor="middle" font-size="13" fill="#6b7280">Nenhum agendamento neste dia.</text>
+    <rect x="520" y="240" width="160" height="34" rx="6" class="btnP"/>
+    <text x="600" y="262" text-anchor="middle" class="btnTxtB">+ Novo agendamento</text>
+
+    <!-- grade vazia (colunas continuam visíveis) -->
+    <rect x="16" y="300" width="1168" height="40" fill="#f9fafb"/>
+    <line x1="16" y1="300" x2="1184" y2="300" stroke="#e5e7eb"/>
+    <line x1="16" y1="340" x2="1184" y2="340" stroke="#e5e7eb"/>
+    <text x="257" y="326" text-anchor="middle" class="colNome">Ana</text>
+    <text x="628" y="326" text-anchor="middle" class="colNome">Carla</text>
+    <text x="998" y="326" text-anchor="middle" class="colNome">Juliana</text>
+
+    <g stroke="#f1f5f9">
+        <line x1="16" y1="370" x2="1184" y2="370"/><line x1="16" y1="430" x2="1184" y2="430"/>
+        <line x1="16" y1="490" x2="1184" y2="490"/><line x1="16" y1="550" x2="1184" y2="550"/>
+        <line x1="16" y1="610" x2="1184" y2="610"/><line x1="16" y1="670" x2="1184" y2="670"/>
+        <line x1="16" y1="730" x2="1184" y2="730"/><line x1="16" y1="790" x2="1184" y2="790"/>
+        <line x1="16" y1="850" x2="1184" y2="850"/><line x1="16" y2="910" x2="1184" y2="910"/>
+    </g>
+    <g stroke="#e2e8f0">
+        <line x1="16" y1="400" x2="1184" y2="400"/><line x1="16" y1="460" x2="1184" y2="460"/>
+        <line x1="16" y1="520" x2="1184" y2="520"/><line x1="16" y1="580" x2="1184" y2="580"/>
+        <line x1="16" y1="640" x2="1184" y2="640"/><line x1="16" y1="700" x2="1184" y2="700"/>
+        <line x1="16" y1="760" x2="1184" y2="760"/><line x1="16" y1="820" x2="1184" y2="820"/>
+        <line x1="16" y1="880" x2="1184" y2="880"/><line x1="16" y1="940" x2="1184" y2="940"/>
+    </g>
+
+    <rect x="16" y="340" width="56" height="600" fill="#f9fafb"/>
+    <line x1="72" y1="300" x2="72" y2="940" stroke="#e5e7eb"/>
+    <g class="t10h" text-anchor="end">
+        <text x="64" y="343">09:00</text><text x="64" y="403">10:00</text>
+        <text x="64" y="463">11:00</text><text x="64" y="523">12:00</text>
+        <text x="64" y="583">13:00</text><text x="64" y="643">14:00</text>
+        <text x="64" y="703">15:00</text><text x="64" y="763">16:00</text>
+        <text x="64" y="823">17:00</text><text x="64" y="883">18:00</text>
+        <text x="64" y="938">19:00</text>
+    </g>
+    <line x1="443" y1="300" x2="443" y2="940" stroke="#e5e7eb"/>
+    <line x1="813" y1="300" x2="813" y2="940" stroke="#e5e7eb"/>
+    <line x1="1184" y1="300" x2="1184" y2="940" stroke="#e5e7eb"/>
+
+    <text x="16" y="978" font-size="11" font-style="italic" fill="#94a3b8">agenda.php · F4 · estado: dia sem agendamentos (as colunas continuam visíveis e o atalho de novo agendamento fica em destaque)</text>
+</svg>

@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" font-family="Segoe UI, Arial, sans-serif">
+    <title>login.php — Login (F1) — estado: credenciais inválidas</title>
+    <style>
+        .t13 { font-size: 13px; fill: #1f2937; }
+        .t12 { font-size: 12px; fill: #1f2937; font-weight: 600; }
+        .t11 { font-size: 11px; fill: #6b7280; }
+    </style>
+
+    <rect width="1200" height="700" fill="#f9fafb"/>
+
+    <!-- cartão central -->
+    <rect x="410" y="100" width="380" height="400" rx="8" fill="#ffffff" stroke="#e5e7eb"/>
+
+    <text x="600" y="150" text-anchor="middle" font-size="22" font-weight="700" fill="#5b21b6">AgendaSalão</text>
+    <text x="600" y="174" text-anchor="middle" class="t11">Agenda de atendimentos do salão</text>
+
+    <!-- caixa de erro (CA3: mensagem genérica; a senha não reaparece) -->
+    <rect x="434" y="196" width="332" height="48" rx="6" fill="#fee2e2"/>
+    <rect x="434" y="196" width="4" height="48" fill="#b91c1c"/>
+    <text x="448" y="225" font-size="13" fill="#b91c1c">Usuário ou senha inválidos.</text>
+
+    <!-- usuário -->
+    <text x="434" y="268" class="t12">Usuário</text>
+    <rect x="434" y="276" width="332" height="40" rx="6" fill="#ffffff" stroke="#cbd5e1"/>
+    <text x="448" y="301" class="t13">recepcao</text>
+
+    <!-- senha (nunca volta preenchida) -->
+    <text x="434" y="344" class="t12">Senha</text>
+    <rect x="434" y="352" width="332" height="40" rx="6" fill="#ffffff" stroke="#cbd5e1"/>
+    <text x="448" y="377" font-size="13" fill="#9ca3af">••••••••</text>
+
+    <!-- entrar -->
+    <rect x="434" y="420" width="332" height="44" rx="6" fill="#5b21b6"/>
+    <text x="600" y="447" text-anchor="middle" font-size="14" font-weight="600" fill="#ffffff">Entrar</text>
+
+    <text x="16" y="678" font-size="11" font-style="italic" fill="#94a3b8">login.php · F1 · tela pública · estado: credenciais inválidas (sem spinner: no PHP puro o carregamento é o indicador do navegador)</text>
+</svg>

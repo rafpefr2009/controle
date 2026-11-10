@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="500" viewBox="0 0 1200 500" font-family="Segoe UI, Arial, sans-serif">
+    <title>historico.php — Histórico (F5) — estado: filtro sem resultados</title>
+    <style>
+        .t20 { font-size: 20px; font-weight: 700; fill: #1f2937; }
+        .t13 { font-size: 13px; fill: #1f2937; }
+        .t12 { font-size: 12px; fill: #1f2937; }
+        .t11 { font-size: 11px; fill: #6b7280; }
+        .t11l { font-size: 11px; fill: #1f2937; font-weight: 600; }
+        .btn { fill: #ffffff; stroke: #cbd5e1; }
+        .btnP { fill: #5b21b6; }
+        .btnTxt { font-size: 11.5px; fill: #1f2937; }
+        .btnTxtB { font-size: 11.5px; fill: #ffffff; font-weight: 600; }
+    </style>
+
+    <rect width="1200" height="500" fill="#f9fafb"/>
+
+    <!-- topo / menu -->
+    <rect width="1200" height="56" fill="#ffffff"/>
+    <line x1="0" y1="56" x2="1200" y2="56" stroke="#e5e7eb"/>
+    <text x="16" y="34" font-size="15" font-weight="700" fill="#5b21b6">AgendaSalão</text>
+    <text x="880" y="34" class="t13">Agenda</text>
+    <text x="950" y="34" class="t13">Serviços</text>
+    <rect x="1022" y="10" width="82" height="36" rx="6" fill="#ede9fe"/>
+    <text x="1030" y="34" font-size="13" font-weight="700" fill="#5b21b6">Histórico</text>
+    <text x="1120" y="34" class="t13">Sair</text>
+
+    <text x="16" y="98" class="t20">Histórico de agendamentos</text>
+    <text x="16" y="120" class="t11">Filtre por cliente, profissional, período e status. O PDF sai exatamente com a tabela abaixo.</text>
+
+    <!-- filtros com "zeca" digitado -->
+    <rect x="16" y="134" width="1168" height="116" fill="#ffffff" stroke="#e5e7eb"/>
+    <text x="28" y="158" class="t11l">Cliente</text>
+    <text x="250" y="158" class="t11l">Profissional</text>
+    <text x="470" y="158" class="t11l">Data inicial</text>
+    <text x="660" y="158" class="t11l">Data final</text>
+    <text x="850" y="158" class="t11l">Status</text>
+    <rect x="28" y="166" width="210" height="34" rx="6" fill="#ffffff" stroke="#cbd5e1"/>
+    <text x="40" y="188" class="t12">zeca</text>
+    <rect x="250" y="166" width="200" height="34" rx="6" fill="#ffffff" stroke="#cbd5e1"/>
+    <text x="262" y="188" class="t12">Todos ▾</text>
+    <rect x="470" y="166" width="170" height="34" rx="6" fill="#ffffff" stroke="#cbd5e1"/>
+    <text x="482" y="188" font-size="12" font-style="italic" fill="#9ca3af">dd/mm/aaaa</text>
+    <rect x="660" y="166" width="170" height="34" rx="6" fill="#ffffff" stroke="#cbd5e1"/>
+    <text x="672" y="188" font-size="12" font-style="italic" fill="#9ca3af">dd/mm/aaaa</text>
+    <rect x="850" y="166" width="130" height="34" rx="6" fill="#ffffff" stroke="#cbd5e1"/>
+    <text x="862" y="188" class="t12">Todos ▾</text>
+    <rect x="28" y="208" width="90" height="32" rx="6" class="btnP"/>
+    <text x="73" y="228" text-anchor="middle" class="btnTxtB">Filtrar</text>
+    <rect x="126" y="208" width="120" height="32" rx="6" class="btn"/>
+    <text x="186" y="228" text-anchor="middle" class="btnTxt">Limpar filtros</text>
+
+    <text x="16" y="278" font-size="12" fill="#6b7280">Filtros aplicados: cliente contém "zeca"</text>
+    <rect x="1064" y="256" width="120" height="36" rx="6" class="btn"/>
+    <text x="1124" y="278" text-anchor="middle" class="btnTxt">Exportar PDF</text>
+
+    <!-- estado vazio -->
+    <rect x="16" y="300" width="1168" height="100" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-dasharray="6 4"/>
+    <text x="600" y="340" text-anchor="middle" font-size="13" fill="#6b7280">Nenhum agendamento encontrado com esses filtros.</text>
+    <rect x="520" y="356" width="160" height="34" rx="6" class="btn"/>
+    <text x="600" y="378" text-anchor="middle" class="btnTxt">Limpar filtros</text>
+
+    <text x="16" y="478" font-size="11" font-style="italic" fill="#94a3b8">historico.php · F5 · estado: filtro sem resultados · datas invertidas/inválidas mostram aviso amigável, nunca erro de banco</text>
+</svg>

@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="770" viewBox="0 0 1200 770" font-family="Segoe UI, Arial, sans-serif">
+    <title>historico.php — Histórico com filtros (F5) — filtro status: realizado</title>
+    <style>
+        .t20 { font-size: 20px; font-weight: 700; fill: #1f2937; }
+        .t13 { font-size: 13px; fill: #1f2937; }
+        .t12 { font-size: 12px; fill: #1f2937; }
+        .t11 { font-size: 11px; fill: #6b7280; }
+        .t11g { font-size: 10.5px; fill: #6b7280; text-transform: uppercase; }
+        .t11l { font-size: 11px; fill: #1f2937; font-weight: 600; }
+        .btn { fill: #ffffff; stroke: #cbd5e1; }
+        .btnP { fill: #5b21b6; }
+        .btnTxt { font-size: 11.5px; fill: #1f2937; }
+        .btnTxtB { font-size: 11.5px; fill: #ffffff; font-weight: 600; }
+        .pill { fill: #dcfce7; }
+        .pillTxt { font-size: 10px; fill: #14532d; }
+    </style>
+
+    <rect width="1200" height="770" fill="#f9fafb"/>
+
+    <!-- topo / menu -->
+    <rect width="1200" height="56" fill="#ffffff"/>
+    <line x1="0" y1="56" x2="1200" y2="56" stroke="#e5e7eb"/>
+    <text x="16" y="34" font-size="15" font-weight="700" fill="#5b21b6">AgendaSalão</text>
+    <text x="880" y="34" class="t13">Agenda</text>
+    <text x="950" y="34" class="t13">Serviços</text>
+    <rect x="1022" y="10" width="82" height="36" rx="6" fill="#ede9fe"/>
+    <text x="1030" y="34" font-size="13" font-weight="700" fill="#5b21b6">Histórico</text>
+    <text x="1120" y="34" class="t13">Sair</text>
+
+    <text x="16" y="98" class="t20">Histórico de agendamentos</text>
+    <text x="16" y="120" class="t11">Filtre por cliente, profissional, período e status. O PDF sai exatamente com a tabela abaixo.</text>
+
+    <!-- painel de filtros (GET; no-print) -->
+    <rect x="16" y="134" width="1168" height="116" fill="#ffffff" stroke="#e5e7eb"/>
+    <text x="28" y="158" class="t11l">Cliente</text>
+    <text x="250" y="158" class="t11l">Profissional</text>
+    <text x="470" y="158" class="t11l">Data inicial</text>
+    <text x="660" y="158" class="t11l">Data final</text>
+    <text x="850" y="158" class="t11l">Status</text>
+    <rect x="28" y="166" width="210" height="34" rx="6" fill="#ffffff" stroke="#cbd5e1"/>
+    <text x="40" y="188" font-size="12" font-style="italic" fill="#9ca3af">Parte do nome</text>
+    <rect x="250" y="166" width="200" height="34" rx="6" fill="#ffffff" stroke="#cbd5e1"/>
+    <text x="262" y="188" class="t12">Todos ▾</text>
+    <rect x="470" y="166" width="170" height="34" rx="6" fill="#ffffff" stroke="#cbd5e1"/>
+    <text x="482" y="188" class="t12">01/11/2026</text>
+    <rect x="660" y="166" width="170" height="34" rx="6" fill="#ffffff" stroke="#cbd5e1"/>
+    <text x="672" y="188" class="t12">10/11/2026</text>
+    <rect x="850" y="166" width="130" height="34" rx="6" fill="#ffffff" stroke="#cbd5e1"/>
+    <text x="862" y="188" class="t12">Realizado ▾</text>
+    <rect x="28" y="208" width="90" height="32" rx="6" class="btnP"/>
+    <text x="73" y="228" text-anchor="middle" class="btnTxtB">Filtrar</text>
+    <rect x="126" y="208" width="120" height="32" rx="6" class="btn"/>
+    <text x="186" y="228" text-anchor="middle" class="btnTxt">Limpar filtros</text>
+
+    <!-- resumo dos filtros (aparece no PDF) -->
+    <text x="16" y="278" font-size="12" fill="#6b7280">Filtros aplicados: período de 01/11/2026 a 10/11/2026 · status: realizado</text>
+    <rect x="1064" y="256" width="120" height="36" rx="6" class="btn"/>
+    <text x="1124" y="278" text-anchor="middle" class="btnTxt">Exportar PDF</text>
+
+    <!-- tabela -->
+    <rect x="16" y="306" width="1168" height="248" fill="#ffffff" stroke="#e5e7eb"/>
+    <rect x="16" y="306" width="1168" height="32" fill="#f9fafb"/>
+    <line x1="16" y1="338" x2="1184" y2="338" stroke="#e5e7eb"/>
+    <text x="28" y="328" class="t11g">Data</text>
+    <text x="130" y="328" class="t11g">Hora</text>
+    <text x="190" y="328" class="t11g">Cliente</text>
+    <text x="400" y="328" class="t11g">Telefone</text>
+    <text x="590" y="328" class="t11g">Profissional</text>
+    <text x="720" y="328" class="t11g">Serviço</text>
+    <text x="920" y="328" class="t11g">Valor</text>
+    <text x="1010" y="328" class="t11g">Status</text>
+
+    <!-- linhas -->
+    <g font-size="12" fill="#1f2937">
+        <text x="28" y="364">05/11/2026</text><text x="130" y="364">09:00</text><text x="190" y="364">Marina Castro</text><text x="400" y="364">(11) 98888-1234</text><text x="590" y="364">Ana</text><text x="720" y="364">Corte feminino</text><text x="920" y="364">R$ 80,00</text>
+        <text x="28" y="400">05/11/2026</text><text x="130" y="400">10:30</text><text x="190" y="400">João Pereira</text><text x="400" y="400">(11) 97777-2345</text><text x="590" y="400">Ana</text><text x="720" y="400">Corte masculino</text><text x="920" y="400">R$ 50,00</text>
+        <text x="28" y="436">06/11/2026</text><text x="130" y="436">14:00</text><text x="190" y="436">Paula Ribeiro</text><text x="400" y="436">(11) 96666-3456</text><text x="590" y="436">Carla</text><text x="720" y="436">Escova</text><text x="920" y="436">R$ 60,00</text>
+        <text x="28" y="472">09/11/2026</text><text x="130" y="472">09:30</text><text x="190" y="472">Rosa Mendes</text><text x="400" y="472">(11) 95555-4567</text><text x="590" y="472">Juliana</text><text x="720" y="472">Escova</text><text x="920" y="472">R$ 60,00</text>
+        <text x="28" y="508">10/11/2026</text><text x="130" y="508">10:00</text><text x="190" y="508">Maria Souza</text><text x="400" y="508">(11) 94444-5678</text><text x="590" y="508">Ana</text><text x="720" y="508">Corte feminino</text><text x="920" y="508">R$ 80,00</text>
+        <text x="28" y="544">10/11/2026</text><text x="130" y="544">15:30</text><text x="190" y="544">Elisa Prado</text><text x="400" y="544">(11) 93333-6789</text><text x="590" y="544">Juliana</text><text x="720" y="544">Corte masculino</text><text x="920" y="544">R$ 50,00</text>
+    </g>
+    <g>
+        <rect x="1010" y="350" width="70" height="18" rx="9" class="pill"/><text x="1045" y="363" text-anchor="middle" class="pillTxt">realizado</text>
+        <rect x="1010" y="386" width="70" height="18" rx="9" class="pill"/><text x="1045" y="399" text-anchor="middle" class="pillTxt">realizado</text>
+        <rect x="1010" y="422" width="70" height="18" rx="9" class="pill"/><text x="1045" y="435" text-anchor="middle" class="pillTxt">realizado</text>
+        <rect x="1010" y="458" width="70" height="18" rx="9" class="pill"/><text x="1045" y="471" text-anchor="middle" class="pillTxt">realizado</text>
+        <rect x="1010" y="494" width="70" height="18" rx="9" class="pill"/><text x="1045" y="507" text-anchor="middle" class="pillTxt">realizado</text>
+        <rect x="1010" y="530" width="70" height="18" rx="9" class="pill"/><text x="1045" y="543" text-anchor="middle" class="pillTxt">realizado</text>
+    </g>
+    <g stroke="#e5e7eb">
+        <line x1="16" y1="378" x2="1184" y2="378"/><line x1="16" y1="414" x2="1184" y2="414"/>
+        <line x1="16" y1="450" x2="1184" y2="450"/><line x1="16" y1="486" x2="1184" y2="486"/>
+        <line x1="16" y1="522" x2="1184" y2="522"/><line x1="16" y1="554" x2="1184" y2="554"/>
+    </g>
+
+    <text x="16" y="748" font-size="11" font-style="italic" fill="#94a3b8">historico.php · F5 · filtros combinados por GET (SQL parametrizado) · status "realizado" = histórico de serviços · Exportar PDF = window.print() com exatamente esta tabela</text>
+</svg>

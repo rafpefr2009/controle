@@ -1,0 +1,130 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" font-family="Segoe UI, Arial, sans-serif">
+    <title>agenda.php — Agenda do dia (F4) — dia com agendamentos</title>
+    <style>
+        .t20 { font-size: 20px; font-weight: 700; fill: #1f2937; }
+        .t13 { font-size: 13px; fill: #1f2937; }
+        .t11 { font-size: 11px; fill: #6b7280; }
+        .t10h { font-size: 10px; fill: #9ca3af; }
+        .btn { fill: #ffffff; stroke: #cbd5e1; }
+        .btnP { fill: #5b21b6; }
+        .btnTxt { font-size: 11.5px; fill: #1f2937; }
+        .btnTxtB { font-size: 11.5px; fill: #ffffff; font-weight: 600; }
+        .colNome { font-size: 13px; font-weight: 600; fill: #1f2937; }
+        .bAgendado { fill: #dbeafe; }
+        .bRealizado { fill: #dcfce7; }
+        .bCancelado { fill: #e5e7eb; }
+        .txAgendado { font-size: 12.5px; font-weight: 700; fill: #1e3a8a; }
+        .txAgendado2 { font-size: 11px; fill: #1e3a8a; }
+        .txRealizado { font-size: 12.5px; font-weight: 700; fill: #14532d; }
+        .txRealizado2 { font-size: 11px; fill: #14532d; }
+        .txCancelado { font-size: 12px; font-weight: 700; fill: #4b5563; }
+    </style>
+
+    <rect width="1200" height="900" fill="#f9fafb"/>
+
+    <!-- topo / menu (no-print) -->
+    <rect width="1200" height="56" fill="#ffffff"/>
+    <line x1="0" y1="56" x2="1200" y2="56" stroke="#e5e7eb"/>
+    <text x="16" y="34" font-size="15" font-weight="700" fill="#5b21b6">AgendaSalão</text>
+    <rect x="872" y="10" width="64" height="36" rx="6" fill="#ede9fe"/>
+    <text x="880" y="34" font-size="13" font-weight="700" fill="#5b21b6">Agenda</text>
+    <text x="950" y="34" class="t13">Serviços</text>
+    <text x="1030" y="34" class="t13">Histórico</text>
+    <text x="1120" y="34" class="t13">Sair</text>
+
+    <!-- título -->
+    <text x="16" y="98" class="t20">Agenda do dia</text>
+    <text x="16" y="120" class="t11">Terça-feira, 10/11/2026 · expediente 09:00 às 19:00</text>
+
+    <!-- controles de data + atalhos (no-print) -->
+    <rect x="16" y="134" width="112" height="36" rx="6" class="btn"/>
+    <text x="72" y="156" text-anchor="middle" class="btnTxt">◀ Dia anterior</text>
+    <rect x="136" y="134" width="64" height="36" rx="6" class="btn"/>
+    <text x="168" y="156" text-anchor="middle" class="btnTxt">Hoje</text>
+    <rect x="208" y="134" width="120" height="36" rx="6" class="btn"/>
+    <text x="268" y="156" text-anchor="middle" class="btnTxt">Próximo dia ▶</text>
+    <rect x="338" y="134" width="140" height="36" rx="6" fill="#ffffff" stroke="#cbd5e1"/>
+    <text x="352" y="156" class="t13">10/11/2026</text>
+    <rect x="904" y="134" width="160" height="36" rx="6" class="btnP"/>
+    <text x="984" y="156" text-anchor="middle" class="btnTxtB">+ Novo agendamento</text>
+    <rect x="1072" y="134" width="112" height="36" rx="6" class="btn"/>
+    <text x="1128" y="156" text-anchor="middle" class="btnTxt">Exportar PDF</text>
+
+    <!-- grade: cabeçalho das colunas -->
+    <rect x="16" y="190" width="1168" height="40" fill="#f9fafb"/>
+    <line x1="16" y1="190" x2="1184" y2="190" stroke="#e5e7eb"/>
+    <line x1="16" y1="230" x2="1184" y2="230" stroke="#e5e7eb"/>
+    <text x="257" y="216" text-anchor="middle" class="colNome">Ana</text>
+    <text x="628" y="216" text-anchor="middle" class="colNome">Carla</text>
+    <text x="998" y="216" text-anchor="middle" class="colNome">Juliana</text>
+
+    <!-- linhas horárias: 30 em 30 min, 600 px = 09:00 às 19:00 (1 px por minuto) -->
+    <g stroke="#f1f5f9">
+        <line x1="16" y1="260" x2="1184" y2="260"/><line x1="16" y1="320" x2="1184" y2="320"/>
+        <line x1="16" y1="380" x2="1184" y2="380"/><line x1="16" y1="440" x2="1184" y2="440"/>
+        <line x1="16" y1="500" x2="1184" y2="500"/><line x1="16" y1="560" x2="1184" y2="560"/>
+        <line x1="16" y1="620" x2="1184" y2="620"/><line x1="16" y1="680" x2="1184" y2="680"/>
+        <line x1="16" y1="740" x2="1184" y2="740"/><line x1="16" y1="800" x2="1184" y2="800"/>
+    </g>
+    <g stroke="#e2e8f0">
+        <line x1="16" y1="290" x2="1184" y2="290"/><line x1="16" y1="350" x2="1184" y2="350"/>
+        <line x1="16" y1="410" x2="1184" y2="410"/><line x1="16" y1="470" x2="1184" y2="470"/>
+        <line x1="16" y1="530" x2="1184" y2="530"/><line x1="16" y1="590" x2="1184" y2="590"/>
+        <line x1="16" y1="650" x2="1184" y2="650"/><line x1="16" y1="710" x2="1184" y2="710"/>
+        <line x1="16" y1="770" x2="1184" y2="770"/><line x1="16" y1="830" x2="1184" y2="830"/>
+    </g>
+
+    <!-- eixo de horas -->
+    <rect x="16" y="230" width="56" height="600" fill="#f9fafb"/>
+    <line x1="72" y1="190" x2="72" y2="830" stroke="#e5e7eb"/>
+    <g class="t10h" text-anchor="end">
+        <text x="64" y="233">09:00</text><text x="64" y="293">10:00</text>
+        <text x="64" y="353">11:00</text><text x="64" y="413">12:00</text>
+        <text x="64" y="473">13:00</text><text x="64" y="533">14:00</text>
+        <text x="64" y="593">15:00</text><text x="64" y="653">16:00</text>
+        <text x="64" y="713">17:00</text><text x="64" y="773">18:00</text>
+        <text x="64" y="828">19:00</text>
+    </g>
+    <line x1="443" y1="190" x2="443" y2="830" stroke="#e5e7eb"/>
+    <line x1="813" y1="190" x2="813" y2="830" stroke="#e5e7eb"/>
+    <line x1="1184" y1="190" x2="1184" y2="830" stroke="#e5e7eb"/>
+
+    <!-- coluna Ana -->
+    <rect x="76" y="290" width="363" height="60" rx="6" class="bAgendado"/>
+    <rect x="76" y="290" width="3" height="60" fill="#1d4ed8"/>
+    <text x="88" y="312" class="txAgendado">10:00 · Maria Souza</text>
+    <text x="88" y="330" class="txAgendado2">corte feminino · agendado</text>
+
+    <rect x="76" y="530" width="363" height="45" rx="6" class="bRealizado"/>
+    <rect x="76" y="530" width="3" height="45" fill="#15803d"/>
+    <text x="88" y="552" class="txRealizado">14:00 · Paula Ribeiro</text>
+    <text x="88" y="570" class="txRealizado2">escova · realizado</text>
+
+    <!-- coluna Carla -->
+    <rect x="447" y="260" width="363" height="30" rx="6" class="bAgendado"/>
+    <rect x="447" y="260" width="3" height="30" fill="#1d4ed8"/>
+    <text x="459" y="279" class="txAgendado">09:30 · João Alves</text>
+
+    <rect x="447" y="350" width="363" height="45" rx="6" class="bAgendado"/>
+    <rect x="447" y="350" width="3" height="45" fill="#1d4ed8"/>
+    <text x="459" y="372" class="txAgendado">11:00 · Renata Lima</text>
+    <text x="459" y="390" class="txAgendado2">escova · agendado</text>
+
+    <rect x="447" y="650" width="363" height="30" rx="6" class="bCancelado"/>
+    <rect x="447" y="650" width="3" height="30" fill="#6b7280"/>
+    <text x="459" y="669" class="txCancelado">16:00 · Bia Nunes · cancelado</text>
+    <line x1="459" y1="665" x2="680" y2="665" stroke="#6b7280"/>
+
+    <!-- coluna Juliana -->
+    <rect x="817" y="500" width="363" height="45" rx="6" class="bRealizado"/>
+    <rect x="817" y="500" width="3" height="45" fill="#15803d"/>
+    <text x="829" y="522" class="txRealizado">13:30 · Rosa Mendes</text>
+    <text x="829" y="540" class="txRealizado2">escova · realizado</text>
+
+    <rect x="817" y="710" width="363" height="60" rx="6" class="bAgendado"/>
+    <rect x="817" y="710" width="3" height="60" fill="#1d4ed8"/>
+    <text x="829" y="732" class="txAgendado">17:00 · Elisa Prado</text>
+    <text x="829" y="750" class="txAgendado2">corte feminino · agendado</text>
+
+    <text x="16" y="878" font-size="11" font-style="italic" fill="#94a3b8">agenda.php · F4 · uma data, 3 colunas por profissional · bloco posicionado por início/duração (1 px por minuto) · clicar no bloco abre a edição</text>
+</svg>

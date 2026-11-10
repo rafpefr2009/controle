@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="730" viewBox="0 0 1200 730" font-family="Segoe UI, Arial, sans-serif">
+    <title>servico_form.php — Novo serviço (F2) — estado: erros de validação</title>
+    <style>
+        .t20 { font-size: 20px; font-weight: 700; fill: #1f2937; }
+        .t13 { font-size: 13px; fill: #1f2937; }
+        .t11 { font-size: 11px; fill: #6b7280; }
+        .t12l { font-size: 12px; fill: #1f2937; font-weight: 600; }
+        .tErr { font-size: 11px; fill: #b91c1c; }
+        .btn { fill: #ffffff; stroke: #cbd5e1; }
+        .btnP { fill: #5b21b6; }
+        .btnTxt { font-size: 11.5px; fill: #1f2937; }
+        .btnTxtB { font-size: 11.5px; fill: #ffffff; font-weight: 600; }
+    </style>
+
+    <rect width="1200" height="730" fill="#f9fafb"/>
+
+    <!-- topo / menu -->
+    <rect width="1200" height="56" fill="#ffffff"/>
+    <line x1="0" y1="56" x2="1200" y2="56" stroke="#e5e7eb"/>
+    <text x="16" y="34" font-size="15" font-weight="700" fill="#5b21b6">AgendaSalão</text>
+    <text x="880" y="34" font-size="13" fill="#1f2937">Agenda</text>
+    <rect x="942" y="10" width="78" height="36" rx="6" fill="#ede9fe"/>
+    <text x="950" y="34" font-size="13" font-weight="700" fill="#5b21b6">Serviços</text>
+    <text x="1030" y="34" font-size="13" fill="#1f2937">Histórico</text>
+    <text x="1120" y="34" font-size="13" fill="#1f2937">Sair</text>
+
+    <text x="280" y="98" class="t20">Novo serviço</text>
+    <text x="280" y="120" class="t11">Duração e valor preenchem o agendamento automaticamente.</text>
+
+    <!-- caixa de erro de validação (CA3: validação no servidor) -->
+    <rect x="280" y="134" width="640" height="96" rx="8" fill="#fee2e2"/>
+    <rect x="280" y="134" width="4" height="96" fill="#b91c1c"/>
+    <text x="296" y="158" font-size="12.5" font-weight="700" fill="#b91c1c">Não foi possível salvar. Corrija os campos destacados:</text>
+    <text x="296" y="178" font-size="11.5" fill="#b91c1c">• Informe o nome do serviço.</text>
+    <text x="296" y="194" font-size="11.5" fill="#b91c1c">• A duração deve ser maior que zero.</text>
+    <text x="296" y="210" font-size="11.5" fill="#b91c1c">• O valor não pode ser negativo.</text>
+
+    <!-- nome (vazio, com erro junto ao campo) -->
+    <text x="280" y="254" class="t12l">Nome *</text>
+    <rect x="280" y="262" width="640" height="36" rx="6" fill="#ffffff" stroke="#b91c1c"/>
+    <text x="280" y="312" class="tErr">Informe o nome do serviço.</text>
+
+    <!-- duração / valor -->
+    <text x="280" y="340" class="t12l">Duração (min) *</text>
+    <rect x="280" y="348" width="312" height="36" rx="6" fill="#ffffff" stroke="#b91c1c"/>
+    <text x="294" y="371" class="t13">0</text>
+    <text x="280" y="398" class="tErr">A duração deve ser maior que zero.</text>
+
+    <text x="608" y="340" class="t12l">Valor padrão (R$) *</text>
+    <rect x="608" y="348" width="312" height="36" rx="6" fill="#ffffff" stroke="#b91c1c"/>
+    <text x="622" y="371" class="t13">-10</text>
+    <text x="608" y="398" class="tErr">O valor não pode ser negativo.</text>
+
+    <!-- rodapé -->
+    <rect x="280" y="430" width="110" height="40" rx="6" class="btnP"/>
+    <text x="335" y="455" text-anchor="middle" class="btnTxtB">Salvar</text>
+    <rect x="402" y="430" width="110" height="40" rx="6" class="btn"/>
+    <text x="457" y="455" text-anchor="middle" class="btnTxt">Cancelar</text>
+
+    <text x="16" y="700" font-size="11" font-style="italic" fill="#94a3b8">servico_form.php · F2 · estado: validação reprovada no servidor · valores digitados preservados · id inexistente mostra "Serviço não encontrado."</text>
+</svg>

@@ -9,7 +9,8 @@
 >
 > **Representação visual:** os mockups estáticos destas telas estão na pasta
 > `prototipo/` (comece por `prototipo/index.html`). São descartáveis e não
-> fazem parte do sistema.
+> fazem parte do sistema. Os wireframes vetoriais (SVG), um por tela/estado,
+> estão na pasta `wireframe/` (comece por `wireframe/index.html`).
 
 ---
 

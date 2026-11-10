@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="650" viewBox="0 0 1200 650" font-family="Segoe UI, Arial, sans-serif">
+    <title>servicos.php — Lista de serviços (F2)</title>
+    <style>
+        .t20 { font-size: 20px; font-weight: 700; fill: #1f2937; }
+        .t13 { font-size: 13px; fill: #1f2937; }
+        .t11 { font-size: 11px; fill: #6b7280; }
+        .t11g { font-size: 11px; fill: #6b7280; text-transform: uppercase; }
+        .btn { fill: #ffffff; stroke: #cbd5e1; }
+        .btnP { fill: #5b21b6; }
+        .btnPerigo { fill: #b91c1c; }
+        .btnTxt { font-size: 11px; fill: #1f2937; }
+        .btnTxtB { font-size: 11.5px; fill: #ffffff; font-weight: 600; }
+    </style>
+
+    <rect width="1200" height="650" fill="#f9fafb"/>
+
+    <!-- topo / menu -->
+    <rect width="1200" height="56" fill="#ffffff"/>
+    <line x1="0" y1="56" x2="1200" y2="56" stroke="#e5e7eb"/>
+    <text x="16" y="34" font-size="15" font-weight="700" fill="#5b21b6">AgendaSalão</text>
+    <text x="880" y="34" class="t13">Agenda</text>
+    <rect x="942" y="10" width="78" height="36" rx="6" fill="#ede9fe"/>
+    <text x="950" y="34" font-size="13" font-weight="700" fill="#5b21b6">Serviços</text>
+    <text x="1030" y="34" class="t13">Histórico</text>
+    <text x="1120" y="34" class="t13">Sair</text>
+
+    <text x="16" y="98" class="t20">Serviços</text>
+    <text x="16" y="120" class="t11">Serviços ativos aparecem no formulário de agendamento; inativar não apaga o registro.</text>
+
+    <rect x="16" y="134" width="130" height="36" rx="6" class="btnP"/>
+    <text x="81" y="156" text-anchor="middle" class="btnTxtB">+ Novo serviço</text>
+
+    <!-- tabela -->
+    <rect x="16" y="186" width="1168" height="212" fill="#ffffff" stroke="#e5e7eb"/>
+    <rect x="16" y="186" width="1168" height="36" fill="#f9fafb"/>
+    <line x1="16" y1="186" x2="1184" y2="186" stroke="#e5e7eb"/>
+    <line x1="16" y1="222" x2="1184" y2="222" stroke="#e5e7eb"/>
+    <text x="28" y="209" class="t11g">Nome</text>
+    <text x="420" y="209" class="t11g">Duração</text>
+    <text x="560" y="209" class="t11g">Valor</text>
+    <text x="720" y="209" class="t11g">Status</text>
+    <text x="1172" y="209" class="t11g" text-anchor="end">Ações</text>
+
+    <!-- linha 1 -->
+    <text x="28" y="248" class="t13">Corte feminino</text>
+    <text x="420" y="248" class="t13">60 min</text>
+    <text x="560" y="248" class="t13">R$ 80,00</text>
+    <text x="720" y="248" class="t13">Ativo</text>
+    <rect x="1016" y="230" width="70" height="28" rx="6" class="btn"/><text x="1051" y="249" text-anchor="middle" class="btnTxt">Editar</text>
+    <rect x="1096" y="230" width="76" height="28" rx="6" class="btnPerigo"/><text x="1134" y="249" text-anchor="middle" font-size="11" fill="#ffffff">Inativar</text>
+    <line x1="16" y1="266" x2="1184" y2="266" stroke="#e5e7eb"/>
+
+    <!-- linha 2 -->
+    <text x="28" y="292" class="t13">Corte masculino</text>
+    <text x="420" y="292" class="t13">30 min</text>
+    <text x="560" y="292" class="t13">R$ 50,00</text>
+    <text x="720" y="292" class="t13">Ativo</text>
+    <rect x="1016" y="274" width="70" height="28" rx="6" class="btn"/><text x="1051" y="293" text-anchor="middle" class="btnTxt">Editar</text>
+    <rect x="1096" y="274" width="76" height="28" rx="6" class="btnPerigo"/><text x="1134" y="293" text-anchor="middle" font-size="11" fill="#ffffff">Inativar</text>
+    <line x1="16" y1="310" x2="1184" y2="310" stroke="#e5e7eb"/>
+
+    <!-- linha 3 -->
+    <text x="28" y="336" class="t13">Escova</text>
+    <text x="420" y="336" class="t13">45 min</text>
+    <text x="560" y="336" class="t13">R$ 60,00</text>
+    <text x="720" y="336" class="t13">Ativo</text>
+    <rect x="1016" y="318" width="70" height="28" rx="6" class="btn"/><text x="1051" y="337" text-anchor="middle" class="btnTxt">Editar</text>
+    <rect x="1096" y="318" width="76" height="28" rx="6" class="btnPerigo"/><text x="1134" y="337" text-anchor="middle" font-size="11" fill="#ffffff">Inativar</text>
+    <line x1="16" y1="354" x2="1184" y2="354" stroke="#e5e7eb"/>
+
+    <!-- linha 4: serviço inativo (nunca apagado) -->
+    <text x="28" y="380" class="t13" fill="#6b7280">Progressiva</text>
+    <text x="420" y="380" class="t13" fill="#6b7280">120 min</text>
+    <text x="560" y="380" class="t13" fill="#6b7280">R$ 150,00</text>
+    <text x="720" y="380" class="t13" fill="#6b7280">Inativo</text>
+    <rect x="1016" y="362" width="70" height="28" rx="6" class="btn"/><text x="1051" y="381" text-anchor="middle" class="btnTxt">Editar</text>
+
+    <text x="16" y="628" font-size="11" font-style="italic" fill="#94a3b8">servicos.php · F2 · listar, editar e inativar · "Inativar" é POST com CSRF + confirmação · estado vazio: "Nenhum serviço cadastrado." com o botão de novo</text>
+</svg>

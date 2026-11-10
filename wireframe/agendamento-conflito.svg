@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" font-family="Segoe UI, Arial, sans-serif">
+    <title>agendamento_form.php — Novo agendamento (F3) — estado: conflito de horário</title>
+    <style>
+        .t20 { font-size: 20px; font-weight: 700; fill: #1f2937; }
+        .t13 { font-size: 13px; fill: #1f2937; }
+        .t11 { font-size: 11px; fill: #6b7280; }
+        .t12l { font-size: 12px; fill: #1f2937; font-weight: 600; }
+        .btn { fill: #ffffff; stroke: #cbd5e1; }
+        .btnP { fill: #5b21b6; }
+        .btnTxt { font-size: 11.5px; fill: #1f2937; }
+        .btnTxtB { font-size: 11.5px; fill: #ffffff; font-weight: 600; }
+        .chip { fill: #ffffff; stroke: #5b21b6; }
+        .chipTxt { font-size: 11px; fill: #5b21b6; }
+    </style>
+
+    <rect width="1200" height="800" fill="#f9fafb"/>
+
+    <!-- topo / menu -->
+    <rect width="1200" height="56" fill="#ffffff"/>
+    <line x1="0" y1="56" x2="1200" y2="56" stroke="#e5e7eb"/>
+    <text x="16" y="34" font-size="15" font-weight="700" fill="#5b21b6">AgendaSalão</text>
+    <rect x="872" y="10" width="64" height="36" rx="6" fill="#ede9fe"/>
+    <text x="880" y="34" font-size="13" font-weight="700" fill="#5b21b6">Agenda</text>
+    <text x="950" y="34" class="t13">Serviços</text>
+    <text x="1030" y="34" class="t13">Histórico</text>
+    <text x="1120" y="34" class="t13">Sair</text>
+
+    <text x="280" y="98" class="t20">Novo agendamento</text>
+    <text x="280" y="120" class="t11">Duração e valor vêm do serviço escolhido e podem ser ajustados.</text>
+
+    <!-- caixa de conflito: mensagem + horários livres (CA2/CA5) -->
+    <rect x="280" y="134" width="640" height="168" rx="8" fill="#fee2e2"/>
+    <rect x="280" y="134" width="4" height="168" fill="#b91c1c"/>
+    <text x="296" y="158" font-size="12.5" font-weight="700" fill="#b91c1c">Conflito de horário: Ana já tem atendimento das</text>
+    <text x="296" y="174" font-size="12.5" font-weight="700" fill="#b91c1c">10:00 às 11:00 nesse dia.</text>
+    <text x="296" y="198" font-size="11" fill="#7f1d1d">Horários livres para Ana em 10/11/2026 (60 min):</text>
+
+    <!-- chips de horários livres (clicáveis) -->
+    <g>
+        <rect x="296" y="208" width="58" height="26" rx="13" class="chip"/><text x="325" y="226" text-anchor="middle" class="chipTxt">11:30</text>
+        <rect x="362" y="208" width="58" height="26" rx="13" class="chip"/><text x="391" y="226" text-anchor="middle" class="chipTxt">12:00</text>
+        <rect x="428" y="208" width="58" height="26" rx="13" class="chip"/><text x="457" y="226" text-anchor="middle" class="chipTxt">12:30</text>
+        <rect x="494" y="208" width="58" height="26" rx="13" class="chip"/><text x="523" y="226" text-anchor="middle" class="chipTxt">13:00</text>
+        <rect x="560" y="208" width="58" height="26" rx="13" class="chip"/><text x="589" y="226" text-anchor="middle" class="chipTxt">13:30</text>
+        <rect x="626" y="208" width="58" height="26" rx="13" class="chip"/><text x="655" y="226" text-anchor="middle" class="chipTxt">14:00</text>
+        <rect x="692" y="208" width="58" height="26" rx="13" class="chip"/><text x="721" y="226" text-anchor="middle" class="chipTxt">14:30</text>
+        <rect x="296" y="240" width="58" height="26" rx="13" class="chip"/><text x="325" y="258" text-anchor="middle" class="chipTxt">15:00</text>
+        <rect x="362" y="240" width="58" height="26" rx="13" class="chip"/><text x="391" y="258" text-anchor="middle" class="chipTxt">15:30</text>
+        <rect x="428" y="240" width="58" height="26" rx="13" class="chip"/><text x="457" y="258" text-anchor="middle" class="chipTxt">16:00</text>
+        <rect x="494" y="240" width="58" height="26" rx="13" class="chip"/><text x="523" y="258" text-anchor="middle" class="chipTxt">16:30</text>
+        <rect x="560" y="240" width="58" height="26" rx="13" class="chip"/><text x="589" y="258" text-anchor="middle" class="chipTxt">17:00</text>
+        <rect x="626" y="240" width="58" height="26" rx="13" class="chip"/><text x="655" y="258" text-anchor="middle" class="chipTxt">17:30</text>
+        <rect x="692" y="240" width="58" height="26" rx="13" class="chip"/><text x="721" y="258" text-anchor="middle" class="chipTxt">18:00</text>
+    </g>
+    <text x="296" y="290" font-size="10.5" font-style="italic" fill="#7f1d1d">Clique em um horário para preencher a hora de início e salvar novamente.</text>
+
+    <!-- formulário com os dados preservados -->
+    <text x="280" y="326" class="t12l">Cliente *</text>
+    <rect x="280" y="334" width="640" height="36" rx="6" fill="#ffffff" stroke="#cbd5e1"/>
+    <text x="294" y="357" class="t13">Marina Castro</text>
+
+    <text x="280" y="396" class="t12l">Telefone</text>
+    <rect x="280" y="404" width="312" height="36" rx="6" fill="#ffffff" stroke="#cbd5e1"/>
+    <text x="294" y="427" class="t13">(11) 98888-1234</text>
+    <text x="608" y="396" class="t12l">Profissional *</text>
+    <rect x="608" y="404" width="312" height="36" rx="6" fill="#ffffff" stroke="#cbd5e1"/>
+    <text x="622" y="427" class="t13">Ana ▾</text>
+
+    <text x="280" y="466" class="t12l">Serviço *</text>
+    <rect x="280" y="474" width="640" height="36" rx="6" fill="#ffffff" stroke="#cbd5e1"/>
+    <text x="294" y="497" class="t13">Corte feminino — 60 min — R$ 80,00 ▾</text>
+
+    <text x="280" y="536" class="t12l">Data *</text>
+    <rect x="280" y="544" width="150" height="36" rx="6" fill="#ffffff" stroke="#cbd5e1"/>
+    <text x="294" y="567" class="t13">10/11/2026</text>
+    <text x="442" y="536" class="t12l">Hora de início *</text>
+    <rect x="442" y="544" width="110" height="36" rx="6" fill="#ffffff" stroke="#b91c1c"/>
+    <text x="456" y="567" class="t13">10:30</text>
+    <text x="564" y="536" class="t12l">Duração (min) *</text>
+    <rect x="564" y="544" width="110" height="36" rx="6" fill="#ffffff" stroke="#cbd5e1"/>
+    <text x="578" y="567" class="t13">60</text>
+    <text x="686" y="536" class="t12l">Valor (R$) *</text>
+    <rect x="686" y="544" width="234" height="36" rx="6" fill="#ffffff" stroke="#cbd5e1"/>
+    <text x="700" y="567" class="t13">80,00</text>
+
+    <text x="280" y="606" class="t12l">Observações</text>
+    <rect x="280" y="614" width="640" height="72" rx="6" fill="#ffffff" stroke="#cbd5e1"/>
+    <text x="294" y="637" class="t13">Cliente pediu para começar pontualmente.</text>
+
+    <rect x="280" y="702" width="110" height="40" rx="6" class="btnP"/>
+    <text x="335" y="727" text-anchor="middle" class="btnTxtB">Salvar</text>
+    <rect x="402" y="702" width="110" height="40" rx="6" class="btn"/>
+    <text x="457" y="727" text-anchor="middle" class="btnTxt">Cancelar</text>
+
+    <text x="16" y="780" font-size="11" font-style="italic" fill="#94a3b8">agendamento_form.php · F3 · estado: conflito (sobrepõe/encosta) · dados preservados, nada é gravado (checagem + gravação na mesma transação)</text>
+</svg>
