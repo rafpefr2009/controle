@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Protótipo visual — AgendaSalão</title>
+    <link rel="stylesheet" href="prototipo.css">
+</head>
+<body>
+    <header class="topo no-print">
+        <span class="marca">AgendaSalão</span>
+        <nav class="menu">
+            <a class="menu-link" href="login.html">Login</a>
+            <a class="menu-link" href="agenda.html">Agenda</a>
+            <a class="menu-link" href="servicos.html">Serviços</a>
+            <a class="menu-link" href="historico.html">Histórico</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h1>Protótipo visual das telas</h1>
+        <p class="subtitulo">
+            Mockups estáticos (HTML + CSS puro) das telas descritas no
+            <code>NAVEGACAO.md</code>, seguindo o <code>DESIGN.md</code>.
+            Não são as telas do sistema: servem para validar layout, estados e
+            responsividade antes da implementação em PHP. A pasta
+            <code>prototipo/</code> é descartável.
+        </p>
+
+        <section>
+            <h2>Telas principais</h2>
+            <ul class="catalogo-lista">
+                <li class="catalogo-item">
+                    <h3><a href="login.html">login.php — Login</a></h3>
+                    <p>Estado exibido: erro de credenciais ("Usuário ou senha inválidos"); a senha não reaparece.</p>
+                </li>
+                <li class="catalogo-item">
+                    <h3><a href="agenda.html">agenda.php — Agenda do dia</a></h3>
+                    <p>3 colunas por profissional, blocos posicionados por horário/duração, três status e navegação por data.</p>
+                </li>
+                <li class="catalogo-item">
+                    <h3><a href="agendamento-form.html">agendamento_form.php — Novo agendamento</a></h3>
+                    <p>Duração e valor preenchem ao trocar o serviço (JS mínimo) e continuam editáveis.</p>
+                </li>
+                <li class="catalogo-item">
+                    <h3><a href="servicos.html">servicos.php — Lista de serviços</a></h3>
+                    <p>Tabela com Editar / Inativar (POST) e um serviço inativo destacado.</p>
+                </li>
+                <li class="catalogo-item">
+                    <h3><a href="servico-form.html">servico_form.php — Novo serviço</a></h3>
+                    <p>Estado exibido: erros de validação campo a campo, com os valores digitados preservados.</p>
+                </li>
+                <li class="catalogo-item">
+                    <h3><a href="historico.html">historico.php — Histórico com filtros</a></h3>
+                    <p>Filtros combinados (cliente, profissional, período, status), resultado e Exportar PDF.</p>
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Estados especiais</h2>
+            <ul class="catalogo-lista">
+                <li class="catalogo-item">
+                    <h3><a href="agenda-vazia.html">Agenda — dia vazio</a></h3>
+                    <p>"Nenhum agendamento neste dia." com as colunas visíveis e o atalho em destaque.</p>
+                </li>
+                <li class="catalogo-item">
+                    <h3><a href="agendamento-conflito.html">Agendamento — conflito de horário</a></h3>
+                    <p>Mensagem de conflito + horários livres clicáveis, dados do formulário preservados.</p>
+                </li>
+                <li class="catalogo-item">
+                    <h3><a href="historico-vazio.html">Histórico — sem resultados</a></h3>
+                    <p>Estado vazio com sugestão de limpar os filtros.</p>
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Como testar</h2>
+            <ul>
+                <li><strong>Celular:</strong> abra cada tela com a janela abaixo de 900 px — a agenda rola para o lado com o eixo de horas fixo à esquerda.</li>
+                <li><strong>PDF:</strong> os botões "Exportar PDF" chamam <code>window.print()</code>; menu, filtros e botões somem na impressão.</li>
+                <li><strong>Carregamento:</strong> não há spinner — no MVP em PHP puro o indicador é o do próprio navegador (NAVEGACAO.md §1).</li>
+                <li><strong>Ações destrutivas:</strong> "Inativar" pede confirmação e é POST; no mockup estático isso é só ilustrado.</li>
+            </ul>
+        </section>
+    </main>
+</body>
+</html>

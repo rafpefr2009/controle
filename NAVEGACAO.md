@@ -6,6 +6,10 @@
 >
 > **Público-alvo:** 2 recepcionistas, que recebem pedidos de horário por
 > WhatsApp e registram no sistema.
+>
+> **Representação visual:** os mockups estáticos destas telas estão na pasta
+> `prototipo/` (comece por `prototipo/index.html`). São descartáveis e não
+> fazem parte do sistema.
 
 ---
 

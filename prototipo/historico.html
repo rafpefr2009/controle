@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Histórico — AgendaSalão (protótipo)</title>
+    <link rel="stylesheet" href="prototipo.css">
+</head>
+<body>
+    <!-- historico.php (F5): filtros combinados por GET (cliente, profissional,
+         período, status). Estado exibido: status "realizado" = histórico de
+         serviços. O PDF (window.print) contém exatamente esta tabela. -->
+    <header class="topo no-print">
+        <a class="marca" href="index.html">AgendaSalão</a>
+        <nav class="menu">
+            <a class="menu-link" href="agenda.html">Agenda</a>
+            <a class="menu-link" href="servicos.html">Serviços</a>
+            <a class="menu-link ativo" href="historico.html" aria-current="page">Histórico</a>
+            <a class="menu-link" href="login.html">Sair</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h1>Histórico de agendamentos</h1>
+        <p class="subtitulo">Filtre por cliente, profissional, período e status. O PDF sai exatamente com a tabela abaixo.</p>
+
+        <form class="filtros no-print" method="get" action="historico.html">
+            <div class="form-linha">
+                <div class="form-campo">
+                    <label for="f-cliente">Cliente</label>
+                    <input id="f-cliente" type="text" placeholder="Parte do nome">
+                </div>
+                <div class="form-campo">
+                    <label for="f-profissional">Profissional</label>
+                    <select id="f-profissional">
+                        <option selected>Todos</option>
+                        <option>Ana</option>
+                        <option>Carla</option>
+                        <option>Juliana</option>
+                    </select>
+                </div>
+                <div class="form-campo">
+                    <label for="f-inicio">Data inicial</label>
+                    <input id="f-inicio" type="date" value="2026-11-01">
+                </div>
+                <div class="form-campo">
+                    <label for="f-fim">Data final</label>
+                    <input id="f-fim" type="date" value="2026-11-10">
+                </div>
+                <div class="form-campo">
+                    <label for="f-status">Status</label>
+                    <select id="f-status">
+                        <option>Todos</option>
+                        <option>Agendado</option>
+                        <option selected>Realizado</option>
+                        <option>Cancelado</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-rodape">
+                <button type="submit" class="btn btn-primario">Filtrar</button>
+                <a class="btn btn-secundario" href="historico.html">Limpar filtros</a>
+            </div>
+        </form>
+
+        <p class="print-resumo">Filtros aplicados: período de 01/11/2026 a 10/11/2026 · status: realizado</p>
+
+        <div class="barra-acoes no-print">
+            <button type="button" class="btn btn-secundario" onclick="window.print()">Exportar PDF</button>
+        </div>
+
+        <div class="tabela-container">
+            <table class="tabela">
+                <thead>
+                    <tr>
+                        <th>Data</th>
+                        <th>Hora</th>
+                        <th>Cliente</th>
+                        <th>Telefone</th>
+                        <th>Profissional</th>
+                        <th>Serviço</th>
+                        <th>Valor</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>05/11/2026</td>
+                        <td>09:00</td>
+                        <td>Marina Castro</td>
+                        <td>(11) 98888-1234</td>
+                        <td>Ana</td>
+                        <td>Corte feminino</td>
+                        <td>R$ 80,00</td>
+                        <td><span class="rotulo-status status-realizado">realizado</span></td>
+                    </tr>
+                    <tr>
+                        <td>05/11/2026</td>
+                        <td>10:30</td>
+                        <td>João Pereira</td>
+                        <td>(11) 97777-2345</td>
+                        <td>Ana</td>
+                        <td>Corte masculino</td>
+                        <td>R$ 50,00</td>
+                        <td><span class="rotulo-status status-realizado">realizado</span></td>
+                    </tr>
+                    <tr>
+                        <td>06/11/2026</td>
+                        <td>14:00</td>
+                        <td>Paula Ribeiro</td>
+                        <td>(11) 96666-3456</td>
+                        <td>Carla</td>
+                        <td>Escova</td>
+                        <td>R$ 60,00</td>
+                        <td><span class="rotulo-status status-realizado">realizado</span></td>
+                    </tr>
+                    <tr>
+                        <td>09/11/2026</td>
+                        <td>09:30</td>
+                        <td>Rosa Mendes</td>
+                        <td>(11) 95555-4567</td>
+                        <td>Juliana</td>
+                        <td>Escova</td>
+                        <td>R$ 60,00</td>
+                        <td><span class="rotulo-status status-realizado">realizado</span></td>
+                    </tr>
+                    <tr>
+                        <td>10/11/2026</td>
+                        <td>10:00</td>
+                        <td>Maria Souza</td>
+                        <td>(11) 94444-5678</td>
+                        <td>Ana</td>
+                        <td>Corte feminino</td>
+                        <td>R$ 80,00</td>
+                        <td><span class="rotulo-status status-realizado">realizado</span></td>
+                    </tr>
+                    <tr>
+                        <td>10/11/2026</td>
+                        <td>15:30</td>
+                        <td>Elisa Prado</td>
+                        <td>(11) 93333-6789</td>
+                        <td>Juliana</td>
+                        <td>Corte masculino</td>
+                        <td>R$ 50,00</td>
+                        <td><span class="rotulo-status status-realizado">realizado</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+</body>
+</html>

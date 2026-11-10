@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Agenda do dia — AgendaSalão (protótipo)</title>
+    <link rel="stylesheet" href="prototipo.css">
+</head>
+<body>
+    <!-- agenda.php (F4): tela principal. Uma data, 3 colunas por profissional
+         ativo, bloco posicionado por início/duração (600 px = 09:00–19:00,
+         1 px por minuto). No celular: rolagem horizontal com eixo fixo. -->
+    <header class="topo no-print">
+        <a class="marca" href="index.html">AgendaSalão</a>
+        <nav class="menu">
+            <a class="menu-link ativo" href="agenda.html" aria-current="page">Agenda</a>
+            <a class="menu-link" href="servicos.html">Serviços</a>
+            <a class="menu-link" href="historico.html">Histórico</a>
+            <a class="menu-link" href="login.html">Sair</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h1>Agenda do dia</h1>
+        <p class="subtitulo">Terça-feira, 10/11/2026 · expediente 09:00 às 19:00</p>
+
+        <div class="agenda-controles no-print">
+            <a class="btn btn-secundario" href="agenda.html" title="09/11/2026">◀ Dia anterior</a>
+            <a class="btn btn-secundario" href="agenda.html">Hoje</a>
+            <a class="btn btn-secundario" href="agenda.html" title="11/11/2026">Próximo dia ▶</a>
+            <input type="date" value="2026-11-10" aria-label="Escolher data">
+            <span class="espacador"></span>
+            <a class="btn btn-primario" href="agendamento-form.html">+ Novo agendamento</a>
+            <button type="button" class="btn btn-secundario" onclick="window.print()">Exportar PDF</button>
+        </div>
+
+        <div class="agenda">
+            <div class="eixo-horas">
+                <div class="eixo-espaco"></div>
+                <div class="eixo-trilha">
+                    <span style="top: 0;">09:00</span>
+                    <span style="top: 60px;">10:00</span>
+                    <span style="top: 120px;">11:00</span>
+                    <span style="top: 180px;">12:00</span>
+                    <span style="top: 240px;">13:00</span>
+                    <span style="top: 300px;">14:00</span>
+                    <span style="top: 360px;">15:00</span>
+                    <span style="top: 420px;">16:00</span>
+                    <span style="top: 480px;">17:00</span>
+                    <span style="top: 540px;">18:00</span>
+                    <span class="eixo-fim">19:00</span>
+                </div>
+            </div>
+
+            <div class="coluna-profissional">
+                <div class="coluna-cabecalho">Ana</div>
+                <div class="trilha">
+                    <a class="bloco status-agendado" style="top: 60px; height: 60px;"
+                       href="agendamento-form.html"
+                       title="Maria Souza · corte feminino · 10:00 às 11:00 · agendado">
+                        <p><strong>10:00</strong> · Maria Souza</p>
+                        <p>corte feminino · <span class="rotulo-status">agendado</span></p>
+                    </a>
+                    <a class="bloco status-realizado" style="top: 300px; height: 45px;"
+                       href="agendamento-form.html"
+                       title="Paula Ribeiro · escova · 14:00 às 14:45 · realizado">
+                        <p><strong>14:00</strong> · Paula Ribeiro</p>
+                        <p>escova · <span class="rotulo-status">realizado</span></p>
+                    </a>
+                </div>
+            </div>
+
+            <div class="coluna-profissional">
+                <div class="coluna-cabecalho">Carla</div>
+                <div class="trilha">
+                    <a class="bloco status-agendado" style="top: 30px; height: 30px;"
+                       href="agendamento-form.html"
+                       title="João Alves · corte masculino · 09:30 às 10:00 · agendado">
+                        <p><strong>09:30</strong> · João Alves</p>
+                    </a>
+                    <a class="bloco status-agendado" style="top: 120px; height: 45px;"
+                       href="agendamento-form.html"
+                       title="Renata Lima · escova · 11:00 às 11:45 · agendado">
+                        <p><strong>11:00</strong> · Renata Lima</p>
+                        <p>escova · <span class="rotulo-status">agendado</span></p>
+                    </a>
+                    <a class="bloco status-cancelado" style="top: 420px; height: 30px;"
+                       href="agendamento-form.html"
+                       title="Bia Nunes · corte masculino · 16:00 às 16:30 · cancelado">
+                        <p><strong>16:00</strong> · Bia Nunes · <span class="rotulo-status">cancelado</span></p>
+                    </a>
+                </div>
+            </div>
+
+            <div class="coluna-profissional">
+                <div class="coluna-cabecalho">Juliana</div>
+                <div class="trilha">
+                    <a class="bloco status-realizado" style="top: 270px; height: 45px;"
+                       href="agendamento-form.html"
+                       title="Rosa Mendes · escova · 13:30 às 14:15 · realizado">
+                        <p><strong>13:30</strong> · Rosa Mendes</p>
+                        <p>escova · <span class="rotulo-status">realizado</span></p>
+                    </a>
+                    <a class="bloco status-agendado" style="top: 480px; height: 60px;"
+                       href="agendamento-form.html"
+                       title="Elisa Prado · corte feminino · 17:00 às 18:00 · agendado">
+                        <p><strong>17:00</strong> · Elisa Prado</p>
+                        <p>corte feminino · <span class="rotulo-status">agendado</span></p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

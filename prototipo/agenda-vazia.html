@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Agenda do dia (vazia) — AgendaSalão (protótipo)</title>
+    <link rel="stylesheet" href="prototipo.css">
+</head>
+<body>
+    <!-- agenda.php (F4): estado "lista vazia" — dia sem agendamentos.
+         As colunas continuam visíveis e o atalho de novo agendamento fica
+         em destaque (NAVEGACAO.md §4.3). -->
+    <header class="topo no-print">
+        <a class="marca" href="index.html">AgendaSalão</a>
+        <nav class="menu">
+            <a class="menu-link ativo" href="agenda.html" aria-current="page">Agenda</a>
+            <a class="menu-link" href="servicos.html">Serviços</a>
+            <a class="menu-link" href="historico.html">Histórico</a>
+            <a class="menu-link" href="login.html">Sair</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h1>Agenda do dia</h1>
+        <p class="subtitulo">Quarta-feira, 11/11/2026 · expediente 09:00 às 19:00</p>
+
+        <div class="agenda-controles no-print">
+            <a class="btn btn-secundario" href="agenda.html" title="10/11/2026">◀ Dia anterior</a>
+            <a class="btn btn-secundario" href="agenda.html">Hoje</a>
+            <a class="btn btn-secundario" href="agenda.html" title="12/11/2026">Próximo dia ▶</a>
+            <input type="date" value="2026-11-11" aria-label="Escolher data">
+            <span class="espacador"></span>
+            <a class="btn btn-primario" href="agendamento-form.html">+ Novo agendamento</a>
+            <button type="button" class="btn btn-secundario" onclick="window.print()">Exportar PDF</button>
+        </div>
+
+        <div class="vazio">
+            <p>Nenhum agendamento neste dia.</p>
+            <a class="btn btn-primario" href="agendamento-form.html">+ Novo agendamento</a>
+        </div>
+
+        <div class="agenda">
+            <div class="eixo-horas">
+                <div class="eixo-espaco"></div>
+                <div class="eixo-trilha">
+                    <span style="top: 0;">09:00</span>
+                    <span style="top: 60px;">10:00</span>
+                    <span style="top: 120px;">11:00</span>
+                    <span style="top: 180px;">12:00</span>
+                    <span style="top: 240px;">13:00</span>
+                    <span style="top: 300px;">14:00</span>
+                    <span style="top: 360px;">15:00</span>
+                    <span style="top: 420px;">16:00</span>
+                    <span style="top: 480px;">17:00</span>
+                    <span style="top: 540px;">18:00</span>
+                    <span class="eixo-fim">19:00</span>
+                </div>
+            </div>
+
+            <div class="coluna-profissional">
+                <div class="coluna-cabecalho">Ana</div>
+                <div class="trilha"></div>
+            </div>
+
+            <div class="coluna-profissional">
+                <div class="coluna-cabecalho">Carla</div>
+                <div class="trilha"></div>
+            </div>
+
+            <div class="coluna-profissional">
+                <div class="coluna-cabecalho">Juliana</div>
+                <div class="trilha"></div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

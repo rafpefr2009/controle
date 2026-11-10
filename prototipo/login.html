@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Entrar — AgendaSalão (protótipo)</title>
+    <link rel="stylesheet" href="prototipo.css">
+</head>
+<body>
+    <!-- login.php: tela pública. Estado ilustrado: credenciais inválidas (F1/CA3).
+         O campo senha nunca volta preenchido. -->
+    <main class="login-card">
+        <p class="login-marca">AgendaSalão</p>
+        <p class="login-subtitulo">Agenda de atendimentos do salão</p>
+
+        <div class="mensagem-erro" role="alert">
+            <p>Usuário ou senha inválidos.</p>
+        </div>
+
+        <form method="post">
+            <div class="form-campo">
+                <label for="campo-usuario">Usuário</label>
+                <input id="campo-usuario" type="text" autocomplete="username" autofocus value="recepcao">
+            </div>
+            <div class="form-campo">
+                <label for="campo-senha">Senha</label>
+                <input id="campo-senha" type="password" autocomplete="current-password" placeholder="••••••••">
+            </div>
+            <div class="form-rodape">
+                <button type="submit" class="btn btn-primario btn-bloco">Entrar</button>
+            </div>
+        </form>
+    </main>
+</body>
+</html>

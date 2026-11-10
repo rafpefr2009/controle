@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Novo serviço — AgendaSalão (protótipo)</title>
+    <link rel="stylesheet" href="prototipo.css">
+</head>
+<body>
+    <!-- servico_form.php (F2): estado de ERRO DE VALIDAÇÃO (CA3).
+         Nome vazio, duração 0 e valor negativo. Mensagens junto aos campos,
+         valores digitados preservados. -->
+    <header class="topo no-print">
+        <a class="marca" href="index.html">AgendaSalão</a>
+        <nav class="menu">
+            <a class="menu-link" href="agenda.html">Agenda</a>
+            <a class="menu-link ativo" href="servicos.html" aria-current="page">Serviços</a>
+            <a class="menu-link" href="historico.html">Histórico</a>
+            <a class="menu-link" href="login.html">Sair</a>
+        </nav>
+    </header>
+
+    <main class="container container-estreito">
+        <h1>Novo serviço</h1>
+        <p class="subtitulo">Duração e valor preenchem o agendamento automaticamente.</p>
+
+        <div class="mensagem-erro" role="alert">
+            <p>Não foi possível salvar. Corrija os campos destacados:</p>
+            <ul class="lista-erros">
+                <li>Informe o nome do serviço.</li>
+                <li>A duração deve ser maior que zero.</li>
+                <li>O valor não pode ser negativo.</li>
+            </ul>
+        </div>
+
+        <form method="post">
+            <div class="form-campo campo-erro">
+                <label for="campo-nome">Nome *</label>
+                <input id="campo-nome" type="text" value="" aria-describedby="erro-nome">
+                <p class="erro-campo" id="erro-nome">Informe o nome do serviço.</p>
+            </div>
+
+            <div class="form-linha">
+                <div class="form-campo campo-erro">
+                    <label for="campo-duracao">Duração (min) *</label>
+                    <input id="campo-duracao" type="number" min="1" value="0" aria-describedby="erro-duracao">
+                    <p class="erro-campo" id="erro-duracao">A duração deve ser maior que zero.</p>
+                </div>
+                <div class="form-campo campo-erro">
+                    <label for="campo-valor">Valor padrão (R$) *</label>
+                    <input id="campo-valor" type="number" min="0" step="0.01" value="-10" aria-describedby="erro-valor">
+                    <p class="erro-campo" id="erro-valor">O valor não pode ser negativo.</p>
+                </div>
+            </div>
+
+            <div class="form-rodape">
+                <button type="submit" class="btn btn-primario">Salvar</button>
+                <a class="btn btn-secundario" href="servicos.html">Cancelar</a>
+            </div>
+        </form>
+    </main>
+</body>
+</html>

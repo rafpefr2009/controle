@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Novo agendamento — AgendaSalão (protótipo)</title>
+    <link rel="stylesheet" href="prototipo.css">
+</head>
+<body>
+    <!-- agendamento_form.php (F3): novo agendamento. Trocar o serviço preenche
+         duração e valor (T4.4); os campos continuam editáveis. -->
+    <header class="topo no-print">
+        <a class="marca" href="index.html">AgendaSalão</a>
+        <nav class="menu">
+            <a class="menu-link ativo" href="agenda.html" aria-current="page">Agenda</a>
+            <a class="menu-link" href="servicos.html">Serviços</a>
+            <a class="menu-link" href="historico.html">Histórico</a>
+            <a class="menu-link" href="login.html">Sair</a>
+        </nav>
+    </header>
+
+    <main class="container container-estreito">
+        <h1>Novo agendamento</h1>
+        <p class="subtitulo">Duração e valor vêm do serviço escolhido e podem ser ajustados.</p>
+
+        <form method="post">
+            <div class="form-campo">
+                <label for="campo-cliente">Cliente *</label>
+                <input id="campo-cliente" type="text" value="Marina Castro" required>
+            </div>
+
+            <div class="form-linha">
+                <div class="form-campo">
+                    <label for="campo-telefone">Telefone</label>
+                    <input id="campo-telefone" type="text" value="(11) 98888-1234" placeholder="(11) 99999-9999">
+                </div>
+                <div class="form-campo">
+                    <label for="campo-profissional">Profissional *</label>
+                    <select id="campo-profissional" required>
+                        <option selected>Ana</option>
+                        <option>Carla</option>
+                        <option>Juliana</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-campo">
+                <label for="campo-servico">Serviço *</label>
+                <select id="campo-servico" required>
+                    <option value="1" data-duracao="60" data-valor="80.00" selected>Corte feminino — 60 min — R$ 80,00</option>
+                    <option value="2" data-duracao="30" data-valor="50.00">Corte masculino — 30 min — R$ 50,00</option>
+                    <option value="3" data-duracao="45" data-valor="60.00">Escova — 45 min — R$ 60,00</option>
+                </select>
+            </div>
+
+            <div class="form-linha">
+                <div class="form-campo">
+                    <label for="campo-data">Data *</label>
+                    <input id="campo-data" type="date" value="2026-11-10" required>
+                </div>
+                <div class="form-campo">
+                    <label for="campo-hora">Hora de início *</label>
+                    <input id="campo-hora" type="time" value="15:00" step="1800" required>
+                </div>
+                <div class="form-campo">
+                    <label for="campo-duracao">Duração (min) *</label>
+                    <input id="campo-duracao" type="number" min="1" value="60" required>
+                </div>
+                <div class="form-campo">
+                    <label for="campo-valor">Valor (R$) *</label>
+                    <input id="campo-valor" type="number" min="0" step="0.01" value="80.00" required>
+                </div>
+            </div>
+
+            <div class="form-campo">
+                <label for="campo-observacoes">Observações</label>
+                <textarea id="campo-observacoes" rows="3">Cliente pediu para começar pontualmente.</textarea>
+            </div>
+
+            <div class="form-rodape">
+                <button type="submit" class="btn btn-primario">Salvar</button>
+                <a class="btn btn-secundario" href="agenda.html">Cancelar</a>
+            </div>
+        </form>
+    </main>
+
+    <script src="prototipo.js"></script>
+</body>
+</html>

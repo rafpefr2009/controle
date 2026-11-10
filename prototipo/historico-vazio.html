@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Histórico (sem resultados) — AgendaSalão (protótipo)</title>
+    <link rel="stylesheet" href="prototipo.css">
+</head>
+<body>
+    <!-- historico.php (F5): estado "lista vazia" — filtro sem resultados.
+         Mensagem clara + sugestão de limpar os filtros. -->
+    <header class="topo no-print">
+        <a class="marca" href="index.html">AgendaSalão</a>
+        <nav class="menu">
+            <a class="menu-link" href="agenda.html">Agenda</a>
+            <a class="menu-link" href="servicos.html">Serviços</a>
+            <a class="menu-link ativo" href="historico.html" aria-current="page">Histórico</a>
+            <a class="menu-link" href="login.html">Sair</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h1>Histórico de agendamentos</h1>
+        <p class="subtitulo">Filtre por cliente, profissional, período e status. O PDF sai exatamente com a tabela abaixo.</p>
+
+        <form class="filtros no-print" method="get" action="historico-vazio.html">
+            <div class="form-linha">
+                <div class="form-campo">
+                    <label for="f-cliente">Cliente</label>
+                    <input id="f-cliente" type="text" value="zeca" placeholder="Parte do nome">
+                </div>
+                <div class="form-campo">
+                    <label for="f-profissional">Profissional</label>
+                    <select id="f-profissional">
+                        <option selected>Todos</option>
+                        <option>Ana</option>
+                        <option>Carla</option>
+                        <option>Juliana</option>
+                    </select>
+                </div>
+                <div class="form-campo">
+                    <label for="f-inicio">Data inicial</label>
+                    <input id="f-inicio" type="date">
+                </div>
+                <div class="form-campo">
+                    <label for="f-fim">Data final</label>
+                    <input id="f-fim" type="date">
+                </div>
+                <div class="form-campo">
+                    <label for="f-status">Status</label>
+                    <select id="f-status">
+                        <option selected>Todos</option>
+                        <option>Agendado</option>
+                        <option>Realizado</option>
+                        <option>Cancelado</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-rodape">
+                <button type="submit" class="btn btn-primario">Filtrar</button>
+                <a class="btn btn-secundario" href="historico.html">Limpar filtros</a>
+            </div>
+        </form>
+
+        <p class="print-resumo">Filtros aplicados: cliente contém "zeca"</p>
+
+        <div class="vazio">
+            <p>Nenhum agendamento encontrado com esses filtros.</p>
+            <a class="btn btn-secundario" href="historico.html">Limpar filtros</a>
+        </div>
+    </main>
+</body>
+</html>

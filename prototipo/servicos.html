@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Serviços — AgendaSalão (protótipo)</title>
+    <link rel="stylesheet" href="prototipo.css">
+</head>
+<body>
+    <!-- servicos.php (F2): lista com Editar / Inativar (POST + confirmação).
+         Serviços inativados continuam no banco, marcados como "Inativo". -->
+    <header class="topo no-print">
+        <a class="marca" href="index.html">AgendaSalão</a>
+        <nav class="menu">
+            <a class="menu-link" href="agenda.html">Agenda</a>
+            <a class="menu-link ativo" href="servicos.html" aria-current="page">Serviços</a>
+            <a class="menu-link" href="historico.html">Histórico</a>
+            <a class="menu-link" href="login.html">Sair</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h1>Serviços</h1>
+        <p class="subtitulo">Serviços ativos aparecem no formulário de agendamento; inativar não apaga o registro.</p>
+
+        <div class="barra-acoes no-print">
+            <a class="btn btn-primario" href="servico-form.html">+ Novo serviço</a>
+        </div>
+
+        <div class="tabela-container">
+            <table class="tabela">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Duração</th>
+                        <th>Valor</th>
+                        <th>Status</th>
+                        <th class="col-acoes">Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Corte feminino</td>
+                        <td>60 min</td>
+                        <td>R$ 80,00</td>
+                        <td>Ativo</td>
+                        <td class="col-acoes">
+                            <a class="btn btn-secundario btn-pequeno" href="servico-form.html">Editar</a>
+                            <form method="post" action="servicos.html">
+                                <button type="submit" class="btn btn-perigo btn-pequeno"
+                                        onclick="return confirm('Inativar o serviço Corte feminino?');">
+                                    Inativar
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Corte masculino</td>
+                        <td>30 min</td>
+                        <td>R$ 50,00</td>
+                        <td>Ativo</td>
+                        <td class="col-acoes">
+                            <a class="btn btn-secundario btn-pequeno" href="servico-form.html">Editar</a>
+                            <form method="post" action="servicos.html">
+                                <button type="submit" class="btn btn-perigo btn-pequeno"
+                                        onclick="return confirm('Inativar o serviço Corte masculino?');">
+                                    Inativar
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Escova</td>
+                        <td>45 min</td>
+                        <td>R$ 60,00</td>
+                        <td>Ativo</td>
+                        <td class="col-acoes">
+                            <a class="btn btn-secundario btn-pequeno" href="servico-form.html">Editar</a>
+                            <form method="post" action="servicos.html">
+                                <button type="submit" class="btn btn-perigo btn-pequeno"
+                                        onclick="return confirm('Inativar o serviço Escova?');">
+                                    Inativar
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                    <tr class="linha-inativa">
+                        <td>Progressiva</td>
+                        <td>120 min</td>
+                        <td>R$ 150,00</td>
+                        <td>Inativo</td>
+                        <td class="col-acoes">
+                            <a class="btn btn-secundario btn-pequeno" href="servico-form.html">Editar</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+</body>
+</html>
