@@ -153,9 +153,10 @@ input:focus, select:focus, textarea:focus, .btn:focus, .menu-link:focus, a:focus
 .agenda { display: flex; overflow-x: auto; border: 1px solid var(--cor-borda); border-radius: 8px; background: var(--cor-superficie); }
 .eixo-horas { position: sticky; left: 0; z-index: 2; flex: none; width: 56px; background: var(--cor-fundo); border-right: 1px solid var(--cor-borda); }
 .eixo-espaco { height: 40px; border-bottom: 1px solid var(--cor-borda); }
-.eixo-trilha { position: relative; height: 600px; }
+.eixo-trilha { position: relative; height: 780px; }
 .eixo-trilha span { position: absolute; right: 8px; font-size: 0.75rem; color: var(--cor-texto-suave); }
-.eixo-fim { top: 600px; transform: translateY(-100%); }
+.eixo-fim { top: 780px; transform: translateY(-100%); }
+.marca-almoco { font-size: 0.625rem !important; letter-spacing: 0.04em; text-transform: uppercase; }
 
 .coluna-profissional { flex: 1 0 180px; border-right: 1px solid var(--cor-borda); }
 .coluna-profissional:last-child { border-right: none; }
@@ -169,12 +170,35 @@ input:focus, select:focus, textarea:focus, .btn:focus, .menu-link:focus, a:focus
 }
 .trilha {
     position: relative;
-    height: 600px;
-    background: repeating-linear-gradient(to bottom, transparent 0, transparent 29px, var(--cor-borda) 29px, var(--cor-borda) 30px);
+    height: 780px;
+    background: repeating-linear-gradient(to bottom, transparent 0, transparent 59px, var(--cor-borda) 59px, var(--cor-borda) 60px);
+}
+
+/* Almoço: 12:00–14:00 = 300px a 420px na grade. */
+.faixa-almoco {
+    position: absolute;
+    top: 300px;
+    right: 0;
+    left: 0;
+    height: 120px;
+    border-top: 1px dashed #9ca3af;
+    border-bottom: 1px dashed #9ca3af;
+    background: rgba(243, 244, 246, 0.92);
+    pointer-events: none;
+}
+.faixa-almoco span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: var(--cor-texto-suave);
+    font-size: 0.6875rem;
+    white-space: nowrap;
+    transform: translate(-50%, -50%);
 }
 
 .bloco {
     position: absolute;
+    z-index: 1;
     left: 4px;
     right: 4px;
     border-radius: 6px;

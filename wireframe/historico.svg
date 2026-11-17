@@ -58,7 +58,7 @@
     <text x="1124" y="278" text-anchor="middle" class="btnTxt">Exportar PDF</text>
 
     <!-- tabela -->
-    <rect x="16" y="306" width="1168" height="248" fill="#ffffff" stroke="#e5e7eb"/>
+    <rect x="16" y="306" width="1168" height="284" fill="#ffffff" stroke="#e5e7eb"/>
     <rect x="16" y="306" width="1168" height="32" fill="#f9fafb"/>
     <line x1="16" y1="338" x2="1184" y2="338" stroke="#e5e7eb"/>
     <text x="28" y="328" class="t11g">Data</text>
@@ -72,12 +72,13 @@
 
     <!-- linhas -->
     <g font-size="12" fill="#1f2937">
-        <text x="28" y="364">05/11/2026</text><text x="130" y="364">09:00</text><text x="190" y="364">Marina Castro</text><text x="400" y="364">(11) 98888-1234</text><text x="590" y="364">Ana</text><text x="720" y="364">Corte feminino</text><text x="920" y="364">R$ 80,00</text>
-        <text x="28" y="400">05/11/2026</text><text x="130" y="400">10:30</text><text x="190" y="400">João Pereira</text><text x="400" y="400">(11) 97777-2345</text><text x="590" y="400">Ana</text><text x="720" y="400">Corte masculino</text><text x="920" y="400">R$ 50,00</text>
-        <text x="28" y="436">06/11/2026</text><text x="130" y="436">14:00</text><text x="190" y="436">Paula Ribeiro</text><text x="400" y="436">(11) 96666-3456</text><text x="590" y="436">Carla</text><text x="720" y="436">Escova</text><text x="920" y="436">R$ 60,00</text>
-        <text x="28" y="472">09/11/2026</text><text x="130" y="472">09:30</text><text x="190" y="472">Rosa Mendes</text><text x="400" y="472">(11) 95555-4567</text><text x="590" y="472">Juliana</text><text x="720" y="472">Escova</text><text x="920" y="472">R$ 60,00</text>
-        <text x="28" y="508">10/11/2026</text><text x="130" y="508">10:00</text><text x="190" y="508">Maria Souza</text><text x="400" y="508">(11) 94444-5678</text><text x="590" y="508">Ana</text><text x="720" y="508">Corte feminino</text><text x="920" y="508">R$ 80,00</text>
-        <text x="28" y="544">10/11/2026</text><text x="130" y="544">15:30</text><text x="190" y="544">Elisa Prado</text><text x="400" y="544">(11) 93333-6789</text><text x="590" y="544">Juliana</text><text x="720" y="544">Corte masculino</text><text x="920" y="544">R$ 50,00</text>
+        <text x="28" y="364">05/11/2026</text><text x="130" y="364">09:00</text><text x="190" y="364">Marina Castro</text><text x="400" y="364">(11) 98888-1234</text><text x="590" y="364">Ana</text><text x="720" y="364">Corte feminino</text><text x="920" y="364">R$ 120,00</text>
+        <text x="28" y="400">05/11/2026</text><text x="130" y="400">10:30</text><text x="190" y="400">João Pereira</text><text x="400" y="400">(11) 97777-2345</text><text x="590" y="400">Ana</text><text x="720" y="400">Corte masculino</text><text x="920" y="400">R$ 70,00</text>
+        <text x="28" y="436">06/11/2026</text><text x="130" y="436">14:00</text><text x="190" y="436">Paula Ribeiro</text><text x="400" y="436">(11) 96666-3456</text><text x="590" y="436">Carla</text><text x="720" y="436">Selagem térmica</text><text x="920" y="436">R$ 180,00</text>
+        <text x="28" y="472">09/11/2026</text><text x="130" y="472">09:30</text><text x="190" y="472">Rosa Mendes</text><text x="400" y="472">(11) 95555-4567</text><text x="590" y="472">Juliana</text><text x="720" y="472">Escova</text><text x="920" y="472">R$ 85,00</text>
+        <text x="28" y="508">10/11/2026</text><text x="130" y="508">07:30</text><text x="190" y="508">Maria Souza</text><text x="400" y="508">(11) 94444-5678</text><text x="590" y="508">Ana</text><text x="720" y="508">Corte feminino</text><text x="920" y="508">R$ 120,00</text>
+        <text x="28" y="544">10/11/2026</text><text x="130" y="544">15:30</text><text x="190" y="544">Elisa Prado</text><text x="400" y="544">(11) 93333-6789</text><text x="590" y="544">Juliana</text><text x="720" y="544">Sobrancelha</text><text x="920" y="544">R$ 40,00</text>
+        <text x="28" y="580">11/11/2026</text><text x="130" y="580">08:00</text><text x="190" y="580">Beatriz Lima</text><text x="400" y="580">(11) 92222-3333</text><text x="590" y="580">Juliana</text><text x="720" y="580">Progressiva</text><text x="920" y="580">R$ 250,00</text>
     </g>
     <g>
         <rect x="1010" y="350" width="70" height="18" rx="9" class="pill"/><text x="1045" y="363" text-anchor="middle" class="pillTxt">realizado</text>
@@ -86,11 +87,13 @@
         <rect x="1010" y="458" width="70" height="18" rx="9" class="pill"/><text x="1045" y="471" text-anchor="middle" class="pillTxt">realizado</text>
         <rect x="1010" y="494" width="70" height="18" rx="9" class="pill"/><text x="1045" y="507" text-anchor="middle" class="pillTxt">realizado</text>
         <rect x="1010" y="530" width="70" height="18" rx="9" class="pill"/><text x="1045" y="543" text-anchor="middle" class="pillTxt">realizado</text>
+        <rect x="1010" y="566" width="70" height="18" rx="9" class="pill"/><text x="1045" y="579" text-anchor="middle" class="pillTxt">realizado</text>
     </g>
     <g stroke="#e5e7eb">
         <line x1="16" y1="378" x2="1184" y2="378"/><line x1="16" y1="414" x2="1184" y2="414"/>
         <line x1="16" y1="450" x2="1184" y2="450"/><line x1="16" y1="486" x2="1184" y2="486"/>
         <line x1="16" y1="522" x2="1184" y2="522"/><line x1="16" y1="554" x2="1184" y2="554"/>
+        <line x1="16" y1="590" x2="1184" y2="590"/>
     </g>
 
     <text x="16" y="748" font-size="11" font-style="italic" fill="#94a3b8">historico.php · F5 · filtros combinados por GET (SQL parametrizado) · status "realizado" = histórico de serviços · Exportar PDF = window.print() com exatamente esta tabela</text>

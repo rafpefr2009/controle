@@ -108,7 +108,10 @@ Use exatamente a estrutura do `PLANO.md` (seção 1). Regras:
 - No banco e nos formulários: `Y-m-d` e `H:i`.
 - Na tela: `d/m/Y` e `H:i`.
 - Dinheiro na tela: `R$ 1.234,56` via `number_format`.
-- Agendamentos devem começar e terminar no mesmo dia (expediente 09:00–19:00).
+- Agendamentos devem começar e terminar no mesmo dia. Expediente 07:00–20:00,
+  com almoço de 12:00 às 14:00; último início pela manhã às 11:30 (desde que o
+  atendimento termine até as 12:00) e retorno às 14:00. O almoço conta como
+  intervalo ocupado na checagem de horários livres.
 
 ### HTML, CSS e JavaScript
 

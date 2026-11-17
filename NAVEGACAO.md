@@ -140,10 +140,12 @@ ativo; o seed traz 3).
 **Conteúdo**
 
 - Cabeçalho com a data por extenso (ex.: "Terça, 10/11/2026").
-- Grade com **3 colunas** (Ana, Carla, Juliana), eixo 09:00–19:00
-  (600 px ≈ 1 px/minuto). Cada agendamento é um bloco posicionado por
-  `top` (minutos desde 09:00) e `height` (duração), exibindo hora, cliente,
-  serviço e um rótulo de status.
+- Grade com **3 colunas** (Ana, Carla, Juliana), eixo 07:00–20:00
+  (780 px ≈ 1 px/minuto) e faixa de almoço destacada das 12:00 às 14:00.
+  Cada agendamento é um bloco posicionado por `top` (calculado por
+  `posicao_na_grade()`, que desconta o almoço) e `height` (duração), exibindo
+  hora, cliente, serviço e um rótulo de status. Último início pela manhã:
+  11:30; a tarde começa às 14:00.
 - Clicar no bloco abre `agendamento_form.php?id=...` (edição).
 - Status visualmente distintos: `status-agendado` (azul), `status-realizado`
   (verde), `status-cancelado` (cinza, riscado/opaco).
@@ -189,14 +191,15 @@ para "Editar agendamento" e o registro vem preenchido.
 **Estados**
 
 - **Carregamento:** nativo do navegador ao salvar.
-- **Erro de validação (campo vazio, duração ≤ 0, valor < 0, fora do
-  expediente 09:00–19:00):** mensagens junto aos campos ou em caixa acima do
+- **Erro de validação (campo vazio, duração ≤ 0, valor < 0, fora de
+  07:00–12:00 / 14:00–20:00 ou atravessando o almoço):** mensagens junto aos campos ou em caixa acima do
   formulário; **os valores digitados são preservados** (o form re-renderiza
   com os dados enviados, exceto campos internos de segurança).
 - **Erro de conflito (CA2/CA5 de F3):** mensagem clara — "Conflito de horário:
   Ana já tem atendimento nesse horário." — seguida da **lista de horários
-  livres do dia** para o profissional (grade 09:00–19:00 de 30 em 30 min,
-  descontando ocupados e o tempo do serviço em edição). Os dados digitados são
+  livres do dia** para o profissional (grade 07:00–20:00 de 30 em 30 min, sem
+  horários entre 12:00 e 13:30, descontando ocupados e o tempo do serviço em
+  edição). Os dados digitados são
   preservados para ajuste.
 - **Sucesso:** grava (INSERT/UPDATE em transação) e redireciona para
   `agenda.php` (PRG).

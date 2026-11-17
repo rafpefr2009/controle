@@ -24,7 +24,7 @@
     <text x="1120" y="34" class="t13">Sair</text>
 
     <text x="280" y="98" class="t20">Novo agendamento</text>
-    <text x="280" y="120" class="t11">Duração e valor vêm do serviço escolhido e podem ser ajustados.</text>
+    <text x="280" y="120" class="t11">Catálogo com progressiva, selagem, botox, barba e combos; duração e valor vêm do serviço escolhido.</text>
 
     <!-- cliente -->
     <text x="280" y="150" class="t12l">Cliente *</text>
@@ -42,7 +42,7 @@
     <!-- serviço -->
     <text x="280" y="282" class="t12l">Serviço *</text>
     <rect x="280" y="290" width="640" height="36" rx="6" fill="#ffffff" stroke="#cbd5e1"/>
-    <text x="294" y="313" class="t13">Corte feminino — 60 min — R$ 80,00 ▾</text>
+    <text x="294" y="313" class="t13">Corte feminino — 60 min — R$ 120,00 ▾</text>
 
     <!-- data / hora / duração / valor -->
     <text x="280" y="348" class="t12l">Data *</text>
@@ -56,7 +56,7 @@
     <text x="578" y="379" class="t13">60</text>
     <text x="686" y="348" class="t12l">Valor (R$) *</text>
     <rect x="686" y="356" width="234" height="36" rx="6" fill="#ffffff" stroke="#cbd5e1"/>
-    <text x="700" y="379" class="t13">80,00</text>
+    <text x="700" y="379" class="t13">120,00</text>
 
     <!-- observações -->
     <text x="280" y="412" class="t12l">Observações</text>

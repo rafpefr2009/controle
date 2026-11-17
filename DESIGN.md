@@ -151,26 +151,28 @@ livres, que apenas preenchem a hora do formulário).
 ```text
 Desktop (≥900px)
 ┌──────┬──────────┬──────────┬──────────┐
-│ 09:00│ (Ana)    │ (Carla)  │ (Juliana)│   ← .eixo-horas + .coluna-profissional
+│ 07:00│ (Ana)    │ (Carla)  │ (Juliana)│   ← .eixo-horas + .coluna-profissional
 │      │ ┌──────┐ │          │ ┌──────┐ │
-│ 10:00│ │Maria │ │          │ │ Rosa │ │   ← .bloco (top/height em px)
-│      │ │10:00 │ │          │ │ corte│ │
+│ 08:00│ │Maria │ │          │ │ João │ │   ← .bloco (top/height em px)
+│      │ │07:30 │ │          │ │08:00 │ │
 │ 11:00│ └──────┘ │          │ └──────┘ │
-│      │          │ ┌──────┐ │          │
-│ 12:00│          │ │Joana │ │          │
+│ 12:00│ ════════ almoço 12:00–14:00 ═══│   ← .faixa-almoco (120px)
+│ 14:00│          │          │          │
+│ 20:00│          │          │          │
 └──────┴──────────┴──────────┴──────────┘
-   ↑ 600px de altura = 09:00–19:00 (1px por minuto)
+   ↑ 780px de altura = 07:00–20:00 com 2h de almoço (1px por minuto)
 ```
 
-- `.agenda`: `display: flex` com `.eixo-horas` (coluna fixa de ~56px com os
-  rótulos 09:00…19:00) e uma `.coluna-profissional` por profissional ativo
-  (`flex: 1; min-width: 180px`).
-- Cada coluna tem o nome no topo (sticky no topo da coluna) e um
-  `.trilha` de 600px (`position: relative`) com linha de fundo a cada 30 min
-  (repeating-linear-gradient sutil).
-- `.bloco`: `position: absolute; top: minutosDesde09h px; height: duracao px;`
-  exibe hora, cliente, serviço e rótulo do status; clicável (vira link para a
-  edição); `overflow: hidden` com ellipsis para textos longos.
+- `.agenda`: `display: flex` com `.eixo-horas` (coluna fixa de ~52px,
+  `.eixo-cabecalho` + `.eixo-marcas` com rótulos 07:00…20:00 e "almoço") e uma
+  `.coluna-profissional` por profissional ativo (`flex: 1; min-width: 150px`).
+- Cada coluna tem o nome no topo e uma `.trilha` de 780px
+  (`position: relative`) com linha de fundo a cada 60 min e uma `.faixa-almoco`
+  absoluta de `top: 300px` / `height: 120px` (12:00–14:00).
+- `.bloco`: `position: absolute; top: posicao_na_grade(hora) px; height: duracao px;`
+  (a função desconta as 2h de almoço, então 14:00 fica em `top: 420px`). Exibe
+  hora, cliente, serviço e rótulo do status; clicável (vira link para a edição);
+  `overflow: hidden` com ellipsis para textos longos.
 - Linha "agora" (opcional): borda vermelha fina na posição do horário atual.
 - Acima da grade: `.agenda-controles` (no-print) com data, botões
   anterior/hoje/próximo e atalhos **Novo agendamento** e **Exportar PDF**.

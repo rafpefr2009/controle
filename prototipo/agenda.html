@@ -8,8 +8,8 @@
 </head>
 <body>
     <!-- agenda.php (F4): tela principal. Uma data, 3 colunas por profissional
-         ativo, bloco posicionado por início/duração (600 px = 09:00–19:00,
-         1 px por minuto). No celular: rolagem horizontal com eixo fixo. -->
+         ativo, bloco posicionado por início/duração (780 px = 07:00–20:00 com
+         2h de almoço, 1 px por minuto). No celular: rolagem horizontal com eixo fixo. -->
     <header class="topo no-print">
         <a class="marca" href="index.html">AgendaSalão</a>
         <nav class="menu">
@@ -22,7 +22,7 @@
 
     <main class="container">
         <h1>Agenda do dia</h1>
-        <p class="subtitulo">Terça-feira, 10/11/2026 · expediente 09:00 às 19:00</p>
+        <p class="subtitulo">Terça-feira, 10/11/2026 · expediente 07:00 às 20:00 · almoço 12:00 às 14:00</p>
 
         <div class="agenda-controles no-print">
             <a class="btn btn-secundario" href="agenda.html" title="09/11/2026">◀ Dia anterior</a>
@@ -38,30 +38,29 @@
             <div class="eixo-horas">
                 <div class="eixo-espaco"></div>
                 <div class="eixo-trilha">
-                    <span style="top: 0;">09:00</span>
-                    <span style="top: 60px;">10:00</span>
-                    <span style="top: 120px;">11:00</span>
-                    <span style="top: 180px;">12:00</span>
-                    <span style="top: 240px;">13:00</span>
-                    <span style="top: 300px;">14:00</span>
-                    <span style="top: 360px;">15:00</span>
-                    <span style="top: 420px;">16:00</span>
-                    <span style="top: 480px;">17:00</span>
-                    <span style="top: 540px;">18:00</span>
-                    <span class="eixo-fim">19:00</span>
+                    <span style="top: 0;">07:00</span>
+                    <span style="top: 120px;">09:00</span>
+                    <span style="top: 240px;">11:00</span>
+                    <span style="top: 300px;">12:00</span>
+                    <span class="marca-almoco" style="top: 360px;">almoço</span>
+                    <span style="top: 420px;">14:00</span>
+                    <span style="top: 540px;">16:00</span>
+                    <span style="top: 660px;">18:00</span>
+                    <span class="eixo-fim">20:00</span>
                 </div>
             </div>
 
             <div class="coluna-profissional">
                 <div class="coluna-cabecalho">Ana</div>
                 <div class="trilha">
-                    <a class="bloco status-agendado" style="top: 60px; height: 60px;"
+                    <div class="faixa-almoco" aria-hidden="true"><span>Almoço · 12:00–14:00</span></div>
+                    <a class="bloco status-agendado" style="top: 30px; height: 60px;"
                        href="agendamento-form.html"
-                       title="Maria Souza · corte feminino · 10:00 às 11:00 · agendado">
-                        <p><strong>10:00</strong> · Maria Souza</p>
+                       title="Maria Souza · corte feminino · 07:30 às 08:30 · agendado">
+                        <p><strong>07:30</strong> · Maria Souza</p>
                         <p>corte feminino · <span class="rotulo-status">agendado</span></p>
                     </a>
-                    <a class="bloco status-realizado" style="top: 300px; height: 45px;"
+                    <a class="bloco status-realizado" style="top: 420px; height: 45px;"
                        href="agendamento-form.html"
                        title="Paula Ribeiro · escova · 14:00 às 14:45 · realizado">
                         <p><strong>14:00</strong> · Paula Ribeiro</p>
@@ -73,18 +72,19 @@
             <div class="coluna-profissional">
                 <div class="coluna-cabecalho">Carla</div>
                 <div class="trilha">
-                    <a class="bloco status-agendado" style="top: 30px; height: 30px;"
+                    <div class="faixa-almoco" aria-hidden="true"><span>Almoço · 12:00–14:00</span></div>
+                    <a class="bloco status-agendado" style="top: 60px; height: 30px;"
                        href="agendamento-form.html"
-                       title="João Alves · corte masculino · 09:30 às 10:00 · agendado">
-                        <p><strong>09:30</strong> · João Alves</p>
+                       title="João Alves · corte masculino · 08:00 às 08:30 · agendado">
+                        <p><strong>08:00</strong> · João Alves</p>
                     </a>
-                    <a class="bloco status-agendado" style="top: 120px; height: 45px;"
+                    <a class="bloco status-agendado" style="top: 240px; height: 45px;"
                        href="agendamento-form.html"
                        title="Renata Lima · escova · 11:00 às 11:45 · agendado">
                         <p><strong>11:00</strong> · Renata Lima</p>
                         <p>escova · <span class="rotulo-status">agendado</span></p>
                     </a>
-                    <a class="bloco status-cancelado" style="top: 420px; height: 30px;"
+                    <a class="bloco status-cancelado" style="top: 540px; height: 30px;"
                        href="agendamento-form.html"
                        title="Bia Nunes · corte masculino · 16:00 às 16:30 · cancelado">
                         <p><strong>16:00</strong> · Bia Nunes · <span class="rotulo-status">cancelado</span></p>
@@ -95,13 +95,14 @@
             <div class="coluna-profissional">
                 <div class="coluna-cabecalho">Juliana</div>
                 <div class="trilha">
-                    <a class="bloco status-realizado" style="top: 270px; height: 45px;"
+                    <div class="faixa-almoco" aria-hidden="true"><span>Almoço · 12:00–14:00</span></div>
+                    <a class="bloco status-realizado" style="top: 210px; height: 45px;"
                        href="agendamento-form.html"
-                       title="Rosa Mendes · escova · 13:30 às 14:15 · realizado">
-                        <p><strong>13:30</strong> · Rosa Mendes</p>
+                       title="Rosa Mendes · escova · 10:30 às 11:15 · realizado">
+                        <p><strong>10:30</strong> · Rosa Mendes</p>
                         <p>escova · <span class="rotulo-status">realizado</span></p>
                     </a>
-                    <a class="bloco status-agendado" style="top: 480px; height: 60px;"
+                    <a class="bloco status-agendado" style="top: 600px; height: 60px;"
                        href="agendamento-form.html"
                        title="Elisa Prado · corte feminino · 17:00 às 18:00 · agendado">
                         <p><strong>17:00</strong> · Elisa Prado</p>

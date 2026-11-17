@@ -8,9 +8,9 @@
 </head>
 <body>
     <!-- agendamento_form.php (F3): estado de CONFLITO (CA2/CA5).
-         Tentativa: Ana, 10/11/2026, 10:30, 60 min → conflita com Maria Souza
-         10:00–11:00 (sobrepõe/encosta = conflito). Os dados digitados ficam
-         preservados e os horários livres são clicáveis. -->
+         Tentativa: Ana, 10/11/2026, 08:00, 60 min → conflita com Maria Souza
+         07:30–08:30 (sobrepõe/encosta = conflito). Expediente 07:00–20:00 com
+         almoço 12:00–14:00; os dados digitados ficam preservados. -->
     <header class="topo no-print">
         <a class="marca" href="index.html">AgendaSalão</a>
         <nav class="menu">
@@ -26,16 +26,15 @@
         <p class="subtitulo">Duração e valor vêm do serviço escolhido e podem ser ajustados.</p>
 
         <div class="mensagem-erro" role="alert">
-            <p><strong>Conflito de horário:</strong> Ana já tem atendimento das 10:00 às 11:00 nesse dia.</p>
+            <p><strong>Conflito de horário:</strong> Ana já tem atendimento das 07:30 às 08:30 nesse dia.</p>
+            <p>Expediente 07:00–20:00, almoço 12:00–14:00. Último início pela manhã: 11:30 (serviços de 30 min); a tarde começa às 14:00.</p>
             <p>Horários livres para Ana em 10/11/2026 (60 min):</p>
             <div class="lista-horarios">
-                <button type="button" class="horario-livre" data-hora="11:30">11:30</button>
-                <button type="button" class="horario-livre" data-hora="12:00">12:00</button>
-                <button type="button" class="horario-livre" data-hora="12:30">12:30</button>
-                <button type="button" class="horario-livre" data-hora="13:00">13:00</button>
-                <button type="button" class="horario-livre" data-hora="13:30">13:30</button>
-                <button type="button" class="horario-livre" data-hora="14:00">14:00</button>
-                <button type="button" class="horario-livre" data-hora="14:30">14:30</button>
+                <button type="button" class="horario-livre" data-hora="09:00">09:00</button>
+                <button type="button" class="horario-livre" data-hora="09:30">09:30</button>
+                <button type="button" class="horario-livre" data-hora="10:00">10:00</button>
+                <button type="button" class="horario-livre" data-hora="10:30">10:30</button>
+                <button type="button" class="horario-livre" data-hora="11:00">11:00</button>
                 <button type="button" class="horario-livre" data-hora="15:00">15:00</button>
                 <button type="button" class="horario-livre" data-hora="15:30">15:30</button>
                 <button type="button" class="horario-livre" data-hora="16:00">16:00</button>
@@ -43,6 +42,8 @@
                 <button type="button" class="horario-livre" data-hora="17:00">17:00</button>
                 <button type="button" class="horario-livre" data-hora="17:30">17:30</button>
                 <button type="button" class="horario-livre" data-hora="18:00">18:00</button>
+                <button type="button" class="horario-livre" data-hora="18:30">18:30</button>
+                <button type="button" class="horario-livre" data-hora="19:00">19:00</button>
             </div>
             <p class="dica">Clique em um horário para preencher "Hora de início" e salvar novamente.</p>
         </div>
@@ -71,9 +72,16 @@
             <div class="form-campo">
                 <label for="campo-servico">Serviço *</label>
                 <select id="campo-servico" required>
-                    <option value="1" data-duracao="60" data-valor="80.00" selected>Corte feminino — 60 min — R$ 80,00</option>
-                    <option value="2" data-duracao="30" data-valor="50.00">Corte masculino — 30 min — R$ 50,00</option>
-                    <option value="3" data-duracao="45" data-valor="60.00">Escova — 45 min — R$ 60,00</option>
+                    <option value="1" data-duracao="60" data-valor="120.00" selected>Corte feminino — 60 min — R$ 120,00</option>
+                    <option value="2" data-duracao="30" data-valor="70.00">Corte masculino — 30 min — R$ 70,00</option>
+                    <option value="3" data-duracao="45" data-valor="85.00">Escova — 45 min — R$ 85,00</option>
+                    <option value="5" data-duracao="180" data-valor="250.00">Progressiva — 180 min — R$ 250,00</option>
+                    <option value="6" data-duracao="120" data-valor="180.00">Selagem térmica — 120 min — R$ 180,00</option>
+                    <option value="7" data-duracao="120" data-valor="220.00">Botox capilar — 120 min — R$ 220,00</option>
+                    <option value="8" data-duracao="30" data-valor="50.00">Barba — 30 min — R$ 50,00</option>
+                    <option value="9" data-duracao="45" data-valor="100.00">Barba + cabelo — 45 min — R$ 100,00</option>
+                    <option value="10" data-duracao="60" data-valor="120.00">Barba + cabelo + sobrancelha — 60 min — R$ 120,00</option>
+                    <option value="11" data-duracao="30" data-valor="40.00">Sobrancelha — 30 min — R$ 40,00</option>
                 </select>
             </div>
 
@@ -84,7 +92,7 @@
                 </div>
                 <div class="form-campo">
                     <label for="campo-hora">Hora de início *</label>
-                    <input id="campo-hora" type="time" value="10:30" step="1800" required>
+                    <input id="campo-hora" type="time" value="08:00" step="1800" required>
                 </div>
                 <div class="form-campo">
                     <label for="campo-duracao">Duração (min) *</label>
@@ -92,7 +100,7 @@
                 </div>
                 <div class="form-campo">
                     <label for="campo-valor">Valor (R$) *</label>
-                    <input id="campo-valor" type="number" min="0" step="0.01" value="80.00" required>
+                    <input id="campo-valor" type="number" min="0" step="0.01" value="120.00" required>
                 </div>
             </div>
 

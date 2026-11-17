@@ -292,12 +292,15 @@ controle/
   - **Verificar:** testar com dados fixos no banco (ver matriz na T4.8).
 
 - [ ] **T4.2 — Criar `horarios_livres()` em `includes/funcoes.php`**
-  - Expediente fixo: 09:00 às 19:00, intervalos de 30 min (constantes).
-  - Gerar candidatos e remover os que conflitam com agendamentos do
-    profissional na data, considerando a duração escolhida.
-  - **Verificar:** com um agendamento 10:00–11:00 e um serviço de 60 min, os
-    horários 09:00, 09:30, 10:00, 10:30 e 11:00 **não** aparecem como livres
-    (pois encostam ou sobrepõem); 11:30 aparece como livre.
+  - Expediente fixo: 07:00 às 20:00, almoço de 12:00 às 14:00 (tratado como
+    intervalo ocupado), intervalos de 30 min (constantes). Último início pela
+    manhã: 11:30, desde que o atendimento caiba antes das 12:00.
+  - Gerar candidatos em 07:00–12:00 e 14:00–20:00 e remover os que conflitam
+    com agendamentos do profissional na data, considerando a duração escolhida.
+  - **Verificar:** com um agendamento 08:00–09:00 e um serviço de 60 min, os
+    horários 07:00, 07:30, 08:00 e 08:30 **não** aparecem como livres (encostam
+    ou sobrepõem); 09:00 aparece como livre. Nenhum horário entre 12:00 e 13:30
+    aparece; o primeiro da tarde é 14:00; 11:30 só aparece para serviço de 30 min.
 
 - [ ] **T4.3 — Criar `agendamento_form.php` (novo)**
   - Campos: cliente, telefone, profissional (select de ativos), serviço (select
@@ -313,7 +316,7 @@ controle/
 
 - [ ] **T4.5 — Salvar agendamento com checagem de conflito**
   - Validar cliente, profissional, serviço, data, hora, duração > 0, valor ≥ 0
-    e início/fim dentro do expediente (09:00–19:00, no mesmo dia).
+    e início/fim dentro de 07:00–12:00 ou 14:00–20:00 (sem atravessar o almoço, mesmo dia).
   - Calcular o fim em PHP; abrir transação; chamar `buscar_conflito()`; se
     houver conflito, mostrar mensagem clara **e** a lista de horários livres do
     dia para aquele profissional; senão, `INSERT` e commit.
@@ -333,12 +336,13 @@ controle/
     realizar muda para `realizado`.
 
 - [ ] **T4.8 — Rodar o roteiro da F3**
-  - Preparar: agendamento de Ana em 10:00–11:00.
-  - Novo 10:30–11:30 → **conflito**.
-  - Novo 11:00–12:00 → **conflito** (encosta).
+  - Preparar: agendamento de Ana em 08:00–09:00.
+  - Novo 08:30–09:30 → **conflito**.
   - Novo 09:00–10:00 → **conflito** (encosta).
-  - Novo 09:00–09:30 → **livre**.
-  - Editar o próprio 10:00–11:00 sem mudar → **permitido**.
+  - Novo 07:00–08:00 → **conflito** (encosta).
+  - Novo 07:00–07:30 → **livre**.
+  - Novo 11:30–12:30 ou 12:00–13:00 → **bloqueado** (atravessa o almoço).
+  - Editar o próprio 08:00–09:00 sem mudar → **permitido**.
   - Cancelar um agendamento das 14:00 e tentar 14:30 → **livre** (cancelado
     não ocupa).
   - **Verificar:** todos os casos acima, mais CA1, CA5, CA6, CA7, CA8 e CA9.
@@ -357,10 +361,13 @@ controle/
   - **Verificar:** o seed gera exatamente 3 colunas.
 
 - [ ] **T5.3 — Posicionar os blocos por horário e duração**
-  - Coluna com altura fixa (ex.: 600 px para 09:00–19:00 = 1 px por minuto);
-    bloco com `top` = minutos desde 09:00 e `height` = duração.
-  - **Verificar:** um agendamento 10:00–11:00 começa na posição de 10:00 e tem
-    60 px de altura.
+  - Coluna com altura fixa de 780 px (300 px de manhã + 120 px de almoço +
+    360 px de tarde = 1 px por minuto); faixa de almoço destacada entre 300 e
+    420 px; bloco com `top` calculado por `posicao_na_grade()` (que desconta o
+    almoço) e `height` = duração.
+  - **Verificar:** um agendamento 08:00–09:00 começa em `top: 60px` com
+    `height: 60px`; um às 14:00 começa em `top: 420px`; nenhum bloco invade a
+    faixa de almoço.
 
 - [ ] **T5.4 — Diferenciar visualmente os status**
   - Classes `status-agendado`, `status-realizado`, `status-cancelado`, com cor
@@ -450,6 +457,95 @@ controle/
 - [ ] **T7.4 — Commit final e tag**
   - Commit com a mensagem `chore: MVP concluído` e tag `v1.0.0`.
   - **Verificar:** `git log --oneline` e `git tag` mostram o commit e a tag.
+
+---
+
+## 10.1 Fase 8 — Acesso do cliente no protótipo visual (mudança de escopo)
+
+> Registrada em `PRODUCT.md` §3.1. Entrega **somente visual**: sem MySQL,
+> sessão ou persistência. Os estados de "logado"/"visitante" são simulados
+> pela navegação entre páginas e por parâmetros de URL fixos no protótipo.
+
+- [x] **T8.1 — Registrar a mudança de escopo**
+  - `PRODUCT.md` §3.1 e esta fase documentam o novo requisito e as restrições.
+  - **Verificar:** os dois arquivos mencionam explicitamente a mudança.
+
+- [x] **T8.2 — Login na abertura do site**
+  - `index.php`: credenciais de exemplo para recepcionista e para cliente,
+    com senha em campo `password` e rótulos associados.
+  - **Verificar:** a tela de abertura mostra os dois acessos e navega para a
+    agenda correspondente ao enviar o formulário.
+
+- [x] **T8.3 — Cadastro do cliente**
+  - `cadastro_cliente.php`: formulário visual com nome, usuário, telefone,
+    senha e confirmação; estados de sucesso e de aviso.
+  - **Verificar:** campos com rótulo, foco visível e link para entrar.
+
+- [x] **T8.4 — Agenda do cliente**
+  - `agenda_cliente.php`: mesma grade das atendentes, sem histórico/exportação,
+    blocos alheios como "Ocupado" e painel de horários disponíveis.
+  - **Verificar:** 3 colunas, navegação por data, nenhum botão de PDF/histórico.
+
+- [x] **T8.5 — Agendamento manual do cliente e bloqueio sem cadastro**
+  - `agendamento_cliente.php`: formulário com cliente fixo, horários livres e
+    retorno à agenda; modo visitante em `agenda_cliente.php?visitante=1` oculta
+    o botão de agendar e mostra o aviso de cadastro obrigatório.
+  - **Verificar:** sem cadastro não há ação de agendamento; com cadastro há.
+
+- [x] **T8.6 — Verificação visual e de sintaxe da fase**
+  - `php -l` em todos os `.php`; navegação pelas telas no navegador sem erros;
+    menu horizontal mantido em todas as páginas.
+  - **Verificar:** todos os itens acima passam.
+
+---
+
+## 10.2 Fase 9 — Datas futuras e catálogo ampliado (mudança de escopo)
+
+> Registrada em `PRODUCT.md` §3.3. Entrega **somente visual**: sem MySQL,
+> sessão ou persistência. As datas e os serviços são dados fictícios centrais.
+
+- [x] **T9.1 — Registrar a mudança de escopo**
+  - `PRODUCT.md` §3.3 e esta fase documentam os dois novos requisitos.
+  - **Verificar:** os dois arquivos mencionam datas futuras e novos serviços.
+
+- [x] **T9.2 — Centralizar datas e serviços do protótipo**
+  - Em `includes/agenda_prototipo.php`: data de referência, normalização e
+    deslocamento de datas, lista de serviços com duração/valor/ativo e
+    auxiliares para serviços ativos e durações.
+  - **Verificar:** `php -l` sem erros; datas inválidas voltam à referência;
+    o deslocamento de 18/11/2026 em +1 dia retorna 19/11/2026.
+
+- [x] **T9.3 — Navegação dinâmica na agenda das recepcionistas**
+  - `agenda.php`: ler `?data=`, calcular anterior/posterior, gerar colunas e
+    blocos a partir dos dados da data e mostrar aviso de dia sem atendimentos.
+  - **Verificar:** "Próximo dia" avança além de 18/11/2026; dia futuro aparece
+    vazio, com 3 colunas e atalho de agendamento já apontando para essa data.
+
+- [x] **T9.4 — Navegação dinâmica na agenda do cliente**
+  - `agenda_cliente.php`: mesma navegação, preservando o modo visitante e a
+    regra de privacidade ("Ocupado" para atendimentos de outros clientes).
+  - **Verificar:** avançar vários dias mantém as 3 colunas, os horários livres
+    e o bloqueio de agendamento no modo visitante.
+
+- [x] **T9.5 — Formulários de agendamento com a data escolhida**
+  - `agendamento_form.php` e `agendamento_cliente.php`: receber `?data=`,
+    usar os serviços ativos do catálogo e devolver à mesma data ao salvar.
+  - **Verificar:** escolher 25/11/2026 na agenda mantém a data no formulário
+    e no retorno; todos os serviços ativos aparecem no select.
+
+- [x] **T9.6 — Catálogo ampliado na lista e no formulário de serviço**
+  - `servicos.php` e `servico_form.php`: gerar linhas a partir do catálogo
+    central, com contadores e estados coerentes (ativo/inativo, novo/edição).
+  - **Verificar:** a lista mostra os novos serviços com valores realistas;
+    o inativo continua visível, mas fora dos selects de agendamento.
+
+- [x] **T9.7 — Artefatos legados atualizados**
+  - `prototipo/` e `wireframe/`: refletir o catálogo ampliado onde ele aparece.
+  - **Verificar:** nenhuma tela legada mostra apenas os três serviços antigos.
+
+- [x] **T9.8 — Verificação visual e de sintaxe da fase**
+  - `php -l` em todos os `.php`, navegação no navegador sem erros, SVGs válidos.
+  - **Verificar:** todos os itens acima passam.
 
 ---
 

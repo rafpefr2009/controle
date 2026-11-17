@@ -123,15 +123,91 @@
 
 ---
 
+## 3.1 Mudança de escopo registrada — acesso do cliente (17/11/2026)
+
+> Registro explícito de mudança de requisito, autorizada pelo responsável pelo
+> produto. O texto original das funcionalidades F1–F5 e da lista de futuras é
+> mantido acima/abaixo para histórico; as regras abaixo **prevalecem** sobre a
+> lista "funcionalidades futuras" apenas no que conflitar com elas.
+
+**Requisito novo:** o cliente também entra no site (login ou cadastro), consulta
+os horários disponíveis e faz seu agendamento manual na **mesma tela da agenda**
+usada pelas recepcionistas.
+
+**Regras da tela do cliente:**
+- a agenda mantém as 3 colunas por profissional, a navegação por data e os
+  blocos posicionados por horário/duração;
+- os blocos de outros clientes aparecem apenas como **"Ocupado"**, sem nome,
+  telefone ou observações; os atendimentos do próprio cliente aparecem completos;
+- **histórico e exportação em PDF não aparecem** no menu nem na tela do cliente;
+- **agendar sem cadastro/login não é permitido**: sem esse estado, a tela mostra
+  aviso e o botão "Novo agendamento" fica oculto.
+
+**Entrega desta rodada:** protótipo visual (conforme decisão do responsável).
+Não há banco de dados, autenticação real nem persistência: o fluxo é simulado
+pela navegação entre páginas com dados fictícios. A implementação funcional
+continua dependente das fases F1–F7 do `PLANO.md`.
+
+---
+
+## 3.2 Mudança de horário registrada (17/11/2026)
+
+> Outra mudança de requisito autorizada pelo responsável pelo produto. As regras
+> abaixo **prevalecem** sobre qualquer menção anterior a "09:00–19:00" neste
+> documento e nos demais arquivos do projeto.
+
+**Novo expediente:** das **07:00 às 20:00**, com **2 horas de almoço das 12:00
+às 14:00**. O último início permitido pela manhã é **11:30** (desde que o
+atendimento termine até as 12:00) e a tarde recomeça às **14:00**.
+
+**Regras decorrentes:**
+- nenhum atendimento pode atravessar o almoço: a checagem de disponibilidade trata
+  `12:00–14:00` como intervalo ocupado para todos os profissionais;
+- agendamentos começam e terminam dentro de 07:00–12:00 ou 14:00–20:00, no
+  mesmo dia;
+- a regra de conflito (intervalos que se sobrepõem **ou encostam**) continua
+  valendo normalmente em cada período.
+
+**Entrega desta rodada:** protótipo visual — grade atualizada na abertura
+(`index.php`), na agenda das atendentes (`agenda.php`), na agenda do cliente
+(`agenda_cliente.php`) e nos formulários, com faixa de almoço destacada.
+
+---
+
+## 3.3 Navegação para datas futuras e catálogo ampliado (17/11/2026)
+
+> Mudança de requisito autorizada pelo responsável pelo produto. As regras
+> abaixo **prevalecem** sobre a limitação de três datas e de três serviços
+> descrita nas seções anteriores.
+
+**Requisito novo 1:** a agenda deve avançar para os **próximos dias**, inclusive
+datas ainda sem atendimentos, para que o cliente possa agendar com antecedência.
+As telas de agenda (recepcionista e cliente) passam a aceitar qualquer data
+válida, com navegação dia anterior / próximo dia calculada a partir da data
+atualmente exibida. O atalho "Novo agendamento" leva a data escolhida para o
+formulário, que devolve o cliente à mesma data ao salvar.
+
+**Requisito novo 2:** o catálogo de serviços é ampliado, mantendo os preços
+coordenados com a prática de um salão de bairro: progressiva, selagem, botox
+capilar, barba, barba + cabelo, barba + cabelo + sobrancelha e sobrancelha à
+parte, além dos serviços já existentes. Combos têm valor menor que a soma dos
+serviços avulsos. Serviços inativados continuam na lista, mas não aparecem
+nos formulários de agendamento.
+
+**Entrega desta rodada:** protótipo visual (sem banco, sessão ou persistência),
+mantendo o mesmo padrão das mudanças §3.1 e §3.2.
+
+---
+
 ## 4. Funcionalidades futuras (fora do MVP)
 
 | # | Funcionalidade | Motivo de adiar |
 |---|---|---|
 | Fut-1 | Tela de CRUD de profissionais | 3 profissionais fixos via seed no MySQL atendem ao MVP |
-| Fut-2 | Agendamento pelo cliente (link público) | Muda o modelo de acesso e autenticação |
+| Fut-2 | Agendamento pelo cliente (link público) | **Parcialmente atendido no protótipo visual (§3.1)**; a autenticação real permanece futura |
 | Fut-3 | Notificações/lembretes automáticos (WhatsApp/SMS/email) | Depende de integração externa |
 | Fut-4 | Relatórios financeiros e gráficos | Não resolve a dor principal |
-| Fut-5 | Perfis/permissões (admin, profissional) | Uso restrito às 2 recepcionistas |
+| Fut-5 | Perfis/permissões (admin, profissional) | **Protótipo visual com perfil cliente (§3.1)**; perfis reais no banco permanecem futuros |
 | Fut-6 | Recuperação de senha | Baixa prioridade no MVP |
 | Fut-7 | Múltiplas unidades | Fora do escopo (um salão) |
 | Fut-8 | App mobile | Site responsivo já atende |
